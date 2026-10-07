@@ -23,6 +23,7 @@
 #include "../sigsession.h"
 #include "../ui/dscombobox.h"
 #include "../ui/langresource.h"
+#include "../ui/xspinbox.h"
 #include "../view/signal.h"
 
 #include <algorithm>
@@ -47,7 +48,7 @@ StackingOptions::StackingOptions(QWidget *parent, SigSession *session) :
     _secondary = new DsComboBox(this);
     _sync_channel = new DsComboBox(this);
     _show_sync = new QCheckBox(L_S(STR_PAGE_DLG, S_ID(IDS_DLG_SHOW_SECONDARY_SYNC_CHANNEL), "Show secondary sync channel"), this);
-    _manual_shift_ns = new QDoubleSpinBox(this);
+    _manual_shift_ns = new XDoubleSpinBox(this);
     _reference_alignment = new QCheckBox(L_S(STR_PAGE_DLG, S_ID(IDS_DLG_STACKING_REFERENCE_ALIGNMENT), "Align using reference signal"), this);
     _drift_correction = new QCheckBox(L_S(STR_PAGE_DLG, S_ID(IDS_DLG_STACKING_DRIFT_CORRECTION), "Correct clock drift using reference signal"), this);
     _drift_master_channel = new DsComboBox(this);
