@@ -282,7 +282,7 @@ int64_t LogicStackingMerger::secondary_shift_samples()
     if (_instant){
         if (!_config.reference_alignment_enabled)
             append_warning(L_S(STR_PAGE_MSG, S_ID(IDS_MSG_STACKING_INSTANT_MANUAL_SHIFT),
-                               "Instant capture used manual shift only. Trigger point alignment was skipped."));
+                               "Instant capture used manual alignment only. Trigger point alignment was skipped."));
     }
     // align captures to the corresponding reported trigger points from the analyzers
     else if (_master.have_trigger && _secondary.have_trigger){
@@ -291,7 +291,7 @@ int64_t LogicStackingMerger::secondary_shift_samples()
     else{
         if (!_config.reference_alignment_enabled)
             append_warning(L_S(STR_PAGE_MSG, S_ID(IDS_MSG_STACKING_SYNC_TRIGGER_MISSING),
-                               "Sync trigger was not reported by both analyzers. Only manual shift applied."));
+                               "Sync trigger was not reported by both analyzers. Only manual alignment applied."));
     }
 
     _secondary_shift_ready = true;

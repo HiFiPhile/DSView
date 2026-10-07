@@ -33,31 +33,31 @@
     },
     {
         "id": "IDS_TOOLBAR_CAPTURE_MODE_REPEAT",
-        "text": "&Wiederholen"
+        "text": "&Wiederholt"
     },
     {
         "id": "IDS_TOOLBAR_CAPTURE_MODE_LOOP",
-        "text": "&Endlos"
+        "text": "E&ndlos"
     },
     {
         "id": "IDS_TOOLBAR_RUN_START",
-        "text": "&Starten"
+        "text": "&Start"
     },
     {
         "id": "IDS_TOOLBAR_RUN_STOP",
-        "text": "S&topp"
+        "text": "&Stopp"
     },
     {
         "id": "IDS_TOOLBAR_ONE_SINGLE",
-        "text": "E&inzel"
+        "text": "E&inzeln"
     },
     {
         "id": "IDS_TOOLBAR_ONE_INSTANT",
-        "text": "&Sofort"
+        "text": "Sofo&rt"
     },
     {
         "id": "IDS_TOOLBAR_ONE_STOP",
-        "text": "S&topp"
+        "text": "&Stopp"
     },
     {
         "id": "IDS_TOOLBAR_TRIGGER",
@@ -65,19 +65,19 @@
     },
     {
         "id": "IDS_TOOLBAR_DECODE",
-        "text": "&Dekodieren"
+        "text": "De&codieren"
     },
     {
         "id": "IDS_TOOLBAR_MEASURE",
-        "text": "&Messen"
+        "text": "M&essen"
     },
     {
         "id": "IDS_TOOLBAR_SEARCH",
-        "text": "&Suchen"
+        "text": "S&uchen"
     },
     {
         "id": "IDS_TOOLBAR_FUNCTION",
-        "text": "&Funktion"
+        "text": "&Funktionen"
     },
     {
         "id": "IDS_TOOLBAR_FUNCTION_FFT",
@@ -133,15 +133,15 @@
     },
     {
         "id": "IDS_TOOLBAR_FILE_CONFIG_LOAD",
-        "text": "&Sitzung laden"
+        "text": "Sitzung &laden"
     },
     {
         "id": "IDS_TOOLBAR_FILE_CONFIG_STORE",
-        "text": "&Sitzung speichern"
+        "text": "Sitzung &speichern"
     },
     {
         "id": "IDS_TOOLBAR_FILE_CONFIG_DEFAULT",
-        "text": "&Standardsitzung laden"
+        "text": "Stan&dardsitzung laden"
     },
     {
         "id": "IDS_TOOLBAR_FILE_OPEN",
@@ -157,7 +157,7 @@
     },
     {
         "id": "IDS_TOOLBAR_FILE_CAPTURE",
-        "text": "&Aufnehmen..."
+        "text": "&Bildschirmfoto..."
     },
     {
         "id": "IDS_TOOLBAR_HELP",
@@ -169,11 +169,11 @@
     },
     {
         "id": "IDS_TOOLBAR_HELP_LANG_EN",
-        "text": "&Englisch"
+        "text": "&English"
     },
     {
         "id": "IDS_TOOLBAR_HELP_LANG_CN",
-        "text": "Chinesisch(&C)"
+        "text": "中文(&C)"
     },
     {
         "id": "IDS_TOOLBAR_HELP_LANG_DE",
@@ -181,7 +181,7 @@
     },
     {
         "id": "IDS_TOOLBAR_HELP_ABOUT",
-        "text": "&Über..."
+        "text": "&Über DSView..."
     },
     {
         "id": "IDS_TOOLBAR_HELP_MANUAL",
@@ -193,10 +193,30 @@
     },
     {
         "id": "IDS_TOOLBAR_HELP_UPDATE",
-        "text": "&Aktualisieren"
+        "text": "Nach &Updates suchen"
     },
     {
         "id": "IDS_TOOLBAR_HELP_LOG",
-        "text": "&Protokolloptionen"
+        "text": "&Log-Optionen"
+    },
+    {
+        "id": "IDS_TOOLBAR_STACKING",
+        "text": "Stacking"
+    },
+    {
+        "id": "IDS_TOOLBAR_DSO_SPLIT",
+        "text": "Aufteilen"
+    },
+    {
+        "id": "IDS_TOOLBAR_FUNCTION_HISTOGRAM",
+        "text": "&Histogramm"
+    },
+    {
+        "id": "IDS_TOOLBAR_FUNCTION_CHMEASURE",
+        "text": "&Kanal-zu-Kanal-Messung"
+    },
+    {
+        "id": "IDS_TOOLBAR_FUNCTION_REFERENCE",
+        "text": "&Referenzkurven"
     }
 ]

@@ -1,15 +1,15 @@
 [
     {
         "id": "IDS_DLG_LOG_OPTIONS",
-        "text": "Protokolloptionen"
+        "text": "Log-Optionen"
     },
     {
         "id": "IDS_DLG_LOG_LEVEL",
-        "text": "Protokollstufe"
+        "text": "Log-Level"
     },
     {
         "id": "IDS_DLG_SAVE_FILE",
-        "text": "In Datei speichern"
+        "text": "In Datei schreiben"
     },
     {
         "id": "IDS_DLG_OPEN_FILE",
@@ -25,15 +25,15 @@
     },
     {
         "id": "IDS_DLG_DOCUMENT",
-        "text": "Dokument"
+        "text": "Dokumentation"
     },
     {
         "id": "IDS_DLG_TRIGGER_DOCK_TITLE",
-        "text": "Triggereinstellung"
+        "text": "Trigger-Einstellungen"
     },
     {
         "id": "IDS_DLG_PROTOCOL_DOCK_TITLE",
-        "text": "Dekodierer"
+        "text": "Decoder"
     },
     {
         "id": "IDS_DLG_MEASURE_DOCK_TITLE",
@@ -41,7 +41,7 @@
     },
     {
         "id": "IDS_DLG_SEARCH_DOCK_TITLE",
-        "text": "Suchen"
+        "text": "Suche"
     },
     {
         "id": "IDS_DLG_SAVE_AS",
@@ -49,15 +49,15 @@
     },
     {
         "id": "IDS_DLG_CHECK_USB_SPEED_ERROR",
-        "text": "Das aktuelle Gerät an einen USB 2.0 Anschluss anzuschließen beeinträchtigt die Leistung erheblich.\nBitte an einen USB 3.0 Anschluss umstecken."
+        "text": "An einem USB-2.0-Anschluss ist die Leistung des Geräts deutlich eingeschränkt.\nBitte schließen Sie es an einen USB-3.0-Anschluss an."
     },
     {
         "id": "IDS_DLG_CHECK_SESSION_FILE_VERSION_ERROR",
-        "text": "Diese Datei liegt in einem alten Format vor.\nSie wird langsam geladen.\nSie können sie nach dem Laden erneut speichern."
+        "text": "Diese Datei liegt in einem älteren Format vor.\nDas Laden dauert daher länger.\nNach dem Laden können Sie sie im aktuellen Format speichern."
     },
     {
         "id": "IDS_DLG_ABOUT",
-        "text": "Über"
+        "text": "Über DSView"
     },
     {
         "id": "IDS_DLG_DISPLAY_OPTIONS",
@@ -65,7 +65,7 @@
     },
     {
         "id": "IDS_DLG_QUICK_SCROLL",
-        "text": "Wellenform-Scrollen mit Mausbewegung"
+        "text": "Ansicht mit der Maus verschieben"
     },
     {
         "id": "IDS_DLG_SAVE",
@@ -77,7 +77,7 @@
     },
     {
         "id": "IDS_DLG_EXIT",
-        "text": "Beenden"
+        "text": "Schließen"
     },
     {
         "id": "IDS_DLG_MANUAL_CALIBRATION",
@@ -89,7 +89,7 @@
     },
     {
         "id": "IDS_DLG_SAVE_CALIBRATION_RESULTS",
-        "text": "Kalibrierungsergebnisse werden gespeichert... Bitte warten."
+        "text": "Kalibrierergebnisse werden gespeichert... Bitte warten."
     },
     {
         "id": "IDS_DLG_CANCEL",
@@ -97,11 +97,11 @@
     },
     {
         "id": "IDS_DLG_RELOAD_CALIBRATION_RESULTS",
-        "text": "Vorherige Kalibrierungsergebnisse werden neu geladen... Bitte warten."
+        "text": "Vorherige Kalibrierergebnisse werden geladen... Bitte warten."
     },
     {
         "id": "IDS_DLG_DECODER_OPTIONS",
-        "text": "Dekodierer-Optionen"
+        "text": "Decoder-Optionen"
     },
     {
         "id": "IDS_DLG_CURSOR",
@@ -109,11 +109,11 @@
     },
     {
         "id": "IDS_DLG_CURSOR_FOR_DECODE_START",
-        "text": "Dekodierungs-Startposition"
+        "text": "Startposition der Decodierung"
     },
     {
         "id": "IDS_DLG_CURSOR_FOR_DECODE_END",
-        "text": "Dekodierungs-Endposition"
+        "text": "Endposition der Decodierung"
     },
     {
         "id": "IDS_DLG_DEVICE_OPTIONS",
@@ -122,6 +122,10 @@
     {
         "id": "IDS_DLG_MODE",
         "text": "Optionen"
+    },
+    {
+        "id": "IDS_DLG_SHARED_OPTIONS",
+        "text": "Gemeinsame Stacking-Optionen"
     },
     {
         "id": "IDS_DLG_ENABLE_ALL",
@@ -165,19 +169,19 @@
     },
     {
         "id": "IDS_DLG_FFT_WINDOW",
-        "text": "FFT-Fenster: "
+        "text": "Fensterfunktion: "
     },
     {
         "id": "IDS_DLG_DC_IGNORED",
-        "text": "DC ignoriert: "
+        "text": "Gleichanteil ignorieren: "
     },
     {
         "id": "IDS_DLG_Y-AXIS_MODE",
-        "text": "Y-Achsen-Modus: "
+        "text": "Y-Achsen-Skalierung: "
     },
     {
         "id": "IDS_DLG_DBV_RANGE",
-        "text": "DBV-Bereich: "
+        "text": "dBV-Bereich: "
     },
     {
         "id": "IDS_DLG_FFT_OPTIONS",
@@ -189,7 +193,7 @@
     },
     {
         "id": "IDS_DLG_REPETITIVE_INTERVAL",
-        "text": "Wiederholungsintervall"
+        "text": "Wiederholintervall"
     },
     {
         "id": "IDS_DLG_X_AXIS",
@@ -205,23 +209,23 @@
     },
     {
         "id": "IDS_DLG_ADD",
-        "text": "Hinzufügen"
+        "text": "Addition"
     },
     {
         "id": "IDS_DLG_SUBSTRACT",
-        "text": "Subtrahieren"
+        "text": "Subtraktion"
     },
     {
         "id": "IDS_DLG_MULTIPLY",
-        "text": "Multiplizieren"
+        "text": "Multiplikation"
     },
     {
         "id": "IDS_DLG_DIVIDE",
-        "text": "Dividieren"
+        "text": "Division"
     },
     {
         "id": "IDS_DLG_MATH_TYPE",
-        "text": "Mathematiktyp"
+        "text": "Rechenoperation"
     },
     {
         "id": "IDS_DLG_1ST_SOURCE",
@@ -241,35 +245,35 @@
     },
     {
         "id": "IDS_DLG_PROTOCOL_EXPORT",
-        "text": "Protokoll-Export"
+        "text": "Decodierergebnisse exportieren"
     },
     {
         "id": "IDS_DLG_EXPORT_DATA",
-        "text": "Daten exportieren: "
+        "text": "Daten exportieren"
     },
     {
         "id": "IDS_DLG_EXPORT_PROTOCOL_LIST_RESULT",
-        "text": "Dekodierungsergebnisse werden exportiert... Bitte warten."
+        "text": "Decodierergebnisse werden exportiert... Bitte warten."
     },
     {
         "id": "IDS_DLG_FIT_TO_WINDOW",
-        "text": "An Fenstergröße anpassen"
+        "text": "An Fenster anpassen"
     },
     {
         "id": "IDS_DLG_FIXED",
-        "text": "Fest"
+        "text": "Unverändert"
     },
     {
         "id": "IDS_DLG_MAP_ZOOM",
-        "text": "Sprungzoom: "
+        "text": "Zoom beim Springen: "
     },
     {
         "id": "IDS_DLG_DECODED_PROTOCOLS",
-        "text": "Dekodierte Protokolle: "
+        "text": "Decodierte Protokolle: "
     },
     {
         "id": "IDS_DLG_PROTOCOL_LIST_VIEWER",
-        "text": "Dekodierungsergebnisse"
+        "text": "Decodierergebnisse"
     },
     {
         "id": "IDS_DLG_REGION",
@@ -277,7 +281,7 @@
     },
     {
         "id": "IDS_DLG_SEARCH_LABEL",
-        "text": "X: Beliebig\n0: Niedriger Pegel\n1: Hoher Pegel\nR: Steigende Flanke\nF: Fallende Flanke\nC: Steigende/Fallende Flanke"
+        "text": "X: beliebig\n0: Low-Pegel\n1: High-Pegel\nR: steigende Flanke\nF: fallende Flanke\nC: steigende oder fallende Flanke"
     },
     {
         "id": "IDS_DLG_SEARCH_OPTIONS",
@@ -285,7 +289,7 @@
     },
     {
         "id": "IDS_DLG_SAVING",
-        "text": "Speichern..."
+        "text": "Wird gespeichert..."
     },
     {
         "id": "IDS_DLG_ORIGINAL_DATA",
@@ -301,11 +305,11 @@
     },
     {
         "id": "IDS_DLG_EXPORTING",
-        "text": "Exportieren..."
+        "text": "Wird exportiert..."
     },
     {
         "id": "IDS_DLG_DONT_CONNECT_PROBES",
-        "text": "Keine Sonden anschließen!"
+        "text": "Keine Tastköpfe anschließen!"
     },
     {
         "id": "IDS_DLG_LOAD_CURRENT_SETTING",
@@ -313,7 +317,7 @@
     },
     {
         "id": "IDS_DLG_WAITING",
-        "text": "Warten"
+        "text": "Bitte warten"
     },
     {
         "id": "IDS_DLG_FINISHED",
@@ -337,19 +341,19 @@
     },
     {
         "id": "IDS_DLG_HOLD_OFF_TIME",
-        "text": "Haltezeit: "
+        "text": "Holdoff-Zeit: "
     },
     {
         "id": "IDS_DLG_NOISE_SENSITIVITY",
-        "text": "Trigger-Empfindlichkeit: "
+        "text": "Triggerempfindlichkeit: "
     },
     {
         "id": "IDS_DLG_TRIGGER_SOURCES",
-        "text": "Triggerquellen: "
+        "text": "Triggerquelle: "
     },
     {
         "id": "IDS_DLG_TRIGGER_TYPES",
-        "text": "Triggertypen: "
+        "text": "Triggerflanke: "
     },
     {
         "id": "IDS_DLG_RISING_EDGE",
@@ -361,7 +365,7 @@
     },
     {
         "id": "IDS_DLG_AUTO",
-        "text": "Automatisch"
+        "text": "Auto"
     },
     {
         "id": "IDS_DLG_CHANNEL_0",
@@ -381,19 +385,19 @@
     },
     {
         "id": "IDS_DLG_KEY_DECODER_SEARCH",
-        "text": "Dekodierer suchen..."
+        "text": "Decoder suchen..."
     },
     {
         "id": "IDS_DLG_TIME_SAMPLES",
-        "text": "Zeit / Abtastwerte"
+        "text": "Zeit / Samples"
     },
     {
         "id": "IDS_DLG_MOUSE_MEASUREMENT",
-        "text": "Mausmessung"
+        "text": "Messung am Mauszeiger"
     },
     {
         "id": "IDS_DLG_ENABLE_FLOATING_MEASUREMENT",
-        "text": "Schwebende Messung aktivieren"
+        "text": "Messwerte am Mauszeiger einblenden"
     },
     {
         "id": "IDS_DLG_CURSOR_DISTANCE",
@@ -409,7 +413,7 @@
     },
     {
         "id": "IDS_DLG_RIS_OR_FAL_EDGE",
-        "text": "Steigende/Fallende Flanken"
+        "text": "Steigend/Fallend/Gesamt"
     },
     {
         "id": "IDS_DLG_W",
@@ -425,7 +429,7 @@
     },
     {
         "id": "IDS_DLG_D",
-        "text": "Tast: "
+        "text": "Tastgrad: "
     },
     {
         "id": "IDS_DLG_SEARCH",
@@ -437,19 +441,19 @@
     },
     {
         "id": "IDS_DLG_OUT_OF_MEMORY",
-        "text": "Kein Speicher mehr"
+        "text": "Nicht genügend Speicher"
     },
     {
         "id": "IDS_DLG_SEARCHING",
-        "text": "Suchen..."
+        "text": "Suche läuft..."
     },
     {
         "id": "IDS_DLG_SEARCH_PREVIOUS",
-        "text": "Vorherigen suchen..."
+        "text": "Rückwärts suchen..."
     },
     {
         "id": "IDS_DLG_SEARCH_NEXT",
-        "text": "Nächsten suchen..."
+        "text": "Vorwärts suchen..."
     },
     {
         "id": "IDS_DLG_SIMPLE_TRIGGER",
@@ -461,19 +465,19 @@
     },
     {
         "id": "IDS_DLG_TOTAL_TRIGGER_STAGES",
-        "text": "Gesamte Triggerstufen: "
+        "text": "Anzahl Triggerstufen: "
     },
     {
         "id": "IDS_DLG_START_FLAG",
-        "text": "Startflag: "
+        "text": "Startbedingung: "
     },
     {
         "id": "IDS_DLG_STOP_FLAG",
-        "text": "Stoppflag: "
+        "text": "Stoppbedingung: "
     },
     {
         "id": "IDS_DLG_CLOCK_FLAG",
-        "text": "Taktflag: "
+        "text": "Taktflanke: "
     },
     {
         "id": "IDS_DLG_DATA_CHANNEL",
@@ -493,7 +497,7 @@
     },
     {
         "id": "IDS_DLG_SERIAL_NOTE_LABEL",
-        "text": "X: Beliebig\n0: Niedriger Pegel\n1: Hoher Pegel\nR: Steigende Flanke\nF: Fallende Flanke\nC: Steigende/Fallende Flanke"
+        "text": "X: beliebig\n0: Low-Pegel\n1: High-Pegel\nR: steigende Flanke\nF: fallende Flanke\nC: steigende oder fallende Flanke"
     },
     {
         "id": "IDS_DLG_DATA_BITS",
@@ -501,7 +505,7 @@
     },
     {
         "id": "IDS_DLG_INV",
-        "text": "Inv"
+        "text": "Inv."
     },
     {
         "id": "IDS_DLG_COUNTER",
@@ -509,7 +513,7 @@
     },
     {
         "id": "IDS_DLG_CONTIGUOUS",
-        "text": "Zusammenhängend"
+        "text": "Aufeinanderfolgend"
     },
     {
         "id": "IDS_DLG_STAGE",
@@ -553,7 +557,7 @@
     },
     {
         "id": "IDS_DLG_SET_CHANNEL_COLOUR",
-        "text": "Kanalfarbe festlegen"
+        "text": "Kanalfarbe ändern"
     },
     {
         "id": "IDS_DLG_LISSAJOUS_FIGURE",
@@ -561,7 +565,7 @@
     },
     {
         "id": "IDS_DLG_DATA_SOURCE_ERROR",
-        "text": "Datenquellenfehler."
+        "text": "Fehler in der Datenquelle."
     },
     {
         "id": "IDS_DLG_ADD_X_CURSOR",
@@ -573,7 +577,7 @@
     },
     {
         "id": "IDS_DLG_AUTO_ROLL",
-        "text": "Auto(Rollen)"
+        "text": "Auto (Roll)"
     },
     {
         "id": "IDS_DLG_WAITING_TRIG",
@@ -589,7 +593,7 @@
     },
     {
         "id": "IDS_DLG_CAPTURED",
-        "text": "% Erfasst"
+        "text": "% erfasst"
     },
     {
         "id": "IDS_DLG_WAITING_FOR_TRIGGER",
@@ -621,15 +625,15 @@
     },
     {
         "id": "IDS_DLG_DUTY_CYCLE",
-        "text": "Tastverhältnis: "
+        "text": "Tastgrad: "
     },
     {
         "id": "IDS_DLG_SAMPLES_MEAS",
-        "text": "Abtastwerte: "
+        "text": "Samples: "
     },
     {
         "id": "IDS_DLG_SAMPLES",
-        "text": "Abtastwerte"
+        "text": "Samples"
     },
     {
         "id": "IDS_DLG_TIME",
@@ -637,31 +641,31 @@
     },
     {
         "id": "IDS_DLG_RULER_UNITS",
-        "text": "Lineal / Cursor-Einheiten"
+        "text": "Einheit für Lineal / Cursor"
     },
     {
         "id": "IDS_DLG_MEASURE",
-        "text": "Messen"
+        "text": "Messung"
     },
     {
         "id": "IDS_DLG_TRIGGER_TIME",
-        "text": "Triggerzeit: "
+        "text": "Triggerzeitpunkt: "
     },
     {
         "id": "IDS_DLG_SAMPLES_CAPTURED",
-        "text": "Abtastwerte erfasst!"
+        "text": " Samples erfasst!"
     },
     {
         "id": "IDS_DLG_FILE_THRESHOLD",
-        "text": "Schwellenwert: "
+        "text": "Schwellwert: "
     },
     {
         "id": "IDS_DLG_VIEW_CAPTURE",
-        "text": "Aufnehmen"
+        "text": "Erfassung läuft"
     },
     {
         "id": "IDS_DLG_CHAN_NUM_ERR2",
-        "text": "Benötigt die Daten von zwei Kanälen."
+        "text": "Erfordert die Daten von zwei Kanälen."
     },
     {
         "id": "IDS_DLG_PATH_NAME",
@@ -681,15 +685,15 @@
     },
     {
         "id": "IDS_DLG_CLEARE",
-        "text": "Löschen"
+        "text": "Leeren"
     },
     {
         "id": "IDS_DLG_APPEND_MODE",
-        "text": "Anhängemodus"
+        "text": "An Logdatei anhängen"
     },
     {
         "id": "IDS_DLG_TRIG_DISPLAY_MIDDLE",
-        "text": "Triggerpos. in der Mitte anzeigen"
+        "text": "Triggerposition mittig anzeigen"
     },
     {
         "id": "IDS_DLG_DISPLAY_PROFILE_IN_BAR",
@@ -701,7 +705,7 @@
     },
     {
         "id": "IDS_DLG_DONT_ASK_SAVE_ON_EXIT",
-        "text": "Nicht nach Speichern der aufgezeichneten Daten fragen"
+        "text": "Nicht fragen, ob erfasste Daten gespeichert werden sollen"
     },
     {
         "id": "IDS_DLG_SERIAL_HEX",
@@ -709,11 +713,11 @@
     },
     {
         "id": "IDS_DLG_SERIAL_INPUT_AS_HEX",
-        "text": "Eingabe im Hex-Format"
+        "text": "Eingabe als Hexwert"
     },
     {
         "id": "IDS_DLG_USE_ABORT_DATA_REPEAT",
-        "text": "Neueste Daten beim Stopp im Wiederholmodus aktualisieren"
+        "text": "Bei Stopp im Wiederholmodus auch unvollständige Daten anzeigen"
     },
     {
         "id": "IDS_DLG_FONT_SIZE",
@@ -741,7 +745,7 @@
     },
     {
         "id": "IDS_DLG_DATA_OUT_OFF_RANGE",
-        "text": "Daten außerhalb des Bereichs"
+        "text": "Messbereich überschritten"
     },
     {
         "id": "IDS_DLG_START_CURSOR",
@@ -805,15 +809,15 @@
     },
     {
         "id": "IDS_FFT_WINDOW_FLATTOP",
-        "text": "Flache Spitze"
+        "text": "Flat-Top"
     },
     {
         "id": "IDS_FFT_MODE_LINEARRSM",
-        "text": "Linear RMS"
+        "text": "Linear (RMS)"
     },
     {
         "id": "IDS_DLG_DECODER_DYNAMIC_FONT_WIDTH",
-        "text": "Adaptive Dekodierer-Schriftbreite"
+        "text": "Adaptive Schriftbreite für Decoder"
     },
     {
         "id": "IDS_DLG_DEFAULT_FONT",
@@ -829,7 +833,7 @@
     },
     {
         "id": "IDS_DLG_VERTICAL_SCROLL_ACTION",
-        "text": "Vertikale Scroll-Aktion"
+        "text": "Funktion des Mausrads"
     },
     {
         "id": "IDS_DLG_VERTICAL_SCROLL_ACTION_SMOOTH_ZOOM",
@@ -845,11 +849,11 @@
     },
     {
         "id": "IDS_DLG_BUS_APPLY",
-        "text": "Anwenden"
+        "text": "Übernehmen"
     },
     {
         "id": "IDS_DLG_BUS_VALUE_HELP",
-        "text": "Hexwert (optionales Präfix 0x). Anwenden ersetzt nur die Trigger der Datenkanäle."
+        "text": "Hexwert (Präfix 0x optional). „Übernehmen“ ersetzt nur die Trigger der Datenkanäle."
     },
     {
         "id": "IDS_DLG_BUS_PATTERN0",
@@ -865,15 +869,15 @@
     },
     {
         "id": "IDS_DLG_BUS_VALUE",
-        "text": "Buswert (Hex)"
+        "text": "Buswert (hex)"
     },
     {
         "id": "IDS_DLG_BUS_EMPTY",
-        "text": "Im Paralleldecoder mindestens einen Datenkanal zuweisen."
+        "text": "Weisen Sie im Parallel-Decoder mindestens einen Datenkanal zu."
     },
     {
         "id": "IDS_DLG_BUS_INVALID",
-        "text": "Einen Hexwert eingeben, zum Beispiel 0xA5."
+        "text": "Geben Sie einen Hexadezimalwert ein, zum Beispiel 0xA5."
     },
     {
         "id": "IDS_DLG_BUS_RANGE",
@@ -881,7 +885,7 @@
     },
     {
         "id": "IDS_DLG_BUS_UNMAPPED",
-        "text": "Nicht zugewiesene Busbits müssen wie im Decoder null sein."
+        "text": "Nicht zugewiesene Busbits müssen den Wert 0 haben (wie im Decoder)."
     },
     {
         "id": "IDS_DLG_BUS_UNAVAILABLE",
@@ -893,7 +897,7 @@
     },
     {
         "id": "IDS_DLG_BUS_SIMPLE",
-        "text": "Einfacher Trigger · Hex"
+        "text": "Einfacher Trigger · hex"
     },
     {
         "id": "IDS_DLG_BUS_STAGE",
@@ -901,7 +905,7 @@
     },
     {
         "id": "IDS_DLG_BUS_SELECT_STAGE",
-        "text": "Eine aktive Triggerstufe auswählen."
+        "text": "Wählen Sie eine aktive Triggerstufe aus."
     },
     {
         "id": "IDS_DLG_BUS_CUSTOM",
@@ -909,11 +913,11 @@
     },
     {
         "id": "IDS_DLG_BUS_CONFIGURE",
-        "text": "Einen Paralleldecoder konfigurieren, um einen Bus-Triggerwert einzugeben."
+        "text": "Konfigurieren Sie einen Parallel-Decoder, um einen Bus-Triggerwert einzugeben."
     },
     {
         "id": "IDS_DLG_BUS_ACQUIRING",
-        "text": "Während der Erfassung können Bus-Trigger nicht bearbeitet werden."
+        "text": "Während einer Erfassung können Bus-Trigger nicht bearbeitet werden."
     },
     {
         "id": "IDS_DLG_BUS_TARGET",
@@ -921,7 +925,7 @@
     },
     {
         "id": "IDS_DLG_BUS_CUSTOM_HELP",
-        "text": "Die aktuellen Bits enthalten Flanken oder ignorierte Werte. Ein Hexwert ersetzt sie durch Pegel."
+        "text": "Die aktuellen Bits enthalten Flanken oder beliebige Werte (X). Ein Hexwert ersetzt sie durch feste Pegel."
     },
     {
         "id": "IDS_DLG_BUS_EDGES",
@@ -929,7 +933,7 @@
     },
     {
         "id": "IDS_DLG_BUS_CHANGED",
-        "text": "Die Buszuordnung wurde geändert. Decoderkanäle prüfen und erneut versuchen."
+        "text": "Die Buszuordnung hat sich geändert. Prüfen Sie die Decoder-Kanäle und versuchen Sie es erneut."
     },
     {
         "id": "IDS_DLG_BUS_CLEAR",
@@ -937,10 +941,182 @@
     },
     {
         "id": "IDS_DLG_BUS_CLEAR_HELP",
-        "text": "Die Datenkanäle dieses Busses im ausgewählten Triggermuster ignorieren."
+        "text": "Setzt die Datenkanäle dieses Busses im ausgewählten Triggermuster auf „beliebig“ (X)."
     },
     {
         "id": "IDS_DLG_BUS_DONT_CARE",
-        "text": "Ignorieren"
+        "text": "Beliebig"
+    },
+    {
+        "id": "IDS_DLG_LOGIC_STACKING",
+        "text": "Logikanalysator-Stacking"
+    },
+    {
+        "id": "IDS_DLG_ENABLE_TWO_ANALYZER_STACKING",
+        "text": "Stacking mit zwei Analysatoren aktivieren"
+    },
+    {
+        "id": "IDS_DLG_SHOW_SECONDARY_SYNC_CHANNEL",
+        "text": "Sync-Kanal des Zweitgeräts anzeigen"
+    },
+    {
+        "id": "IDS_DLG_NS",
+        "text": " ns"
+    },
+    {
+        "id": "IDS_DLG_MASTER",
+        "text": "Hauptgerät"
+    },
+    {
+        "id": "IDS_DLG_SECONDARY",
+        "text": "Zweitgerät"
+    },
+    {
+        "id": "IDS_DLG_SECONDARY_SYNC_INPUT",
+        "text": "Sync-Eingang des Zweitgeräts"
+    },
+    {
+        "id": "IDS_DLG_SECONDARY_MANUAL_SHIFT",
+        "text": "Manuelle Ausrichtung des Zweitgeräts"
+    },
+    {
+        "id": "IDS_DLG_STACKING_DRIFT_CORRECTION",
+        "text": "Taktdrift anhand des Referenzsignals korrigieren"
+    },
+    {
+        "id": "IDS_DLG_STACKING_REFERENCE_ALIGNMENT",
+        "text": "Anhand des Referenzsignals ausrichten"
+    },
+    {
+        "id": "IDS_DLG_STACKING_MASTER_REFERENCE",
+        "text": "Referenzeingang des Hauptgeräts"
+    },
+    {
+        "id": "IDS_DLG_STACKING_SECONDARY_REFERENCE",
+        "text": "Referenzeingang des Zweitgeräts"
+    },
+    {
+        "id": "IDS_DLG_STACKING_REFERENCE_EDGE",
+        "text": "Referenzflanke"
+    },
+    {
+        "id": "IDS_DLG_STACKING_REFERENCE_RISING",
+        "text": "Steigend"
+    },
+    {
+        "id": "IDS_DLG_STACKING_REFERENCE_FALLING",
+        "text": "Fallend"
+    },
+    {
+        "id": "IDS_DLG_STACKING_REFERENCE_BOTH",
+        "text": "Beide"
+    },
+    {
+        "id": "IDS_DLG_SIGNAL_LINE_WIDTH",
+        "text": "Linienstärke der Signale"
+    },
+    {
+        "id": "IDS_DLG_CHANNEL_DIVIDER",
+        "text": "Trennlinie zwischen Kanälen"
+    },
+    {
+        "id": "IDS_DLG_INTEGRATE",
+        "text": "Integral"
+    },
+    {
+        "id": "IDS_DLG_DIFFERENTIATE",
+        "text": "Ableitung"
+    },
+    {
+        "id": "IDS_DLG_ABSOLUTE",
+        "text": "Betrag"
+    },
+    {
+        "id": "IDS_DLG_SQUARE",
+        "text": "Quadrat"
+    },
+    {
+        "id": "IDS_DLG_SQRT",
+        "text": "Quadratwurzel"
+    },
+    {
+        "id": "IDS_DLG_LOWPASS",
+        "text": "Tiefpass"
+    },
+    {
+        "id": "IDS_DLG_HIGHPASS",
+        "text": "Hochpass"
+    },
+    {
+        "id": "IDS_DLG_FILTER_WIDTH",
+        "text": "Filterfenster (Samples)"
+    },
+    {
+        "id": "IDS_DLG_UNIT",
+        "text": "Einheit"
+    },
+    {
+        "id": "IDS_DLG_HISTOGRAM",
+        "text": "Histogramm / Jitter"
+    },
+    {
+        "id": "IDS_DLG_HIST_NO_CHANNEL",
+        "text": "Kein aktivierter Oszilloskopkanal ausgewählt."
+    },
+    {
+        "id": "IDS_DLG_HIST_NO_DATA",
+        "text": "Keine erfassten Daten. Starten Sie zuerst eine Erfassung."
+    },
+    {
+        "id": "IDS_DLG_HIST_VALUE",
+        "text": "Werteverteilung"
+    },
+    {
+        "id": "IDS_DLG_HIST_PERIOD",
+        "text": "Periodenverteilung (Jitter)"
+    },
+    {
+        "id": "IDS_DLG_HIST_NO_JITTER",
+        "text": "Zu wenige Flanken für eine Jitter-Analyse."
+    },
+    {
+        "id": "IDS_DLG_CH_MEASURE",
+        "text": "Kanal-zu-Kanal-Messung"
+    },
+    {
+        "id": "IDS_DLG_CH_NEED_TWO",
+        "text": "Wählen Sie zwei Oszilloskopkanäle aus."
+    },
+    {
+        "id": "IDS_DLG_CH_NEED_DIFF",
+        "text": "Wählen Sie zwei verschiedene Kanäle aus."
+    },
+    {
+        "id": "IDS_DLG_CH_DELAY",
+        "text": "Verzögerung (steigend)"
+    },
+    {
+        "id": "IDS_DLG_CH_SKEW",
+        "text": "Versatz (fallend)"
+    },
+    {
+        "id": "IDS_DLG_CH_PHASE",
+        "text": "Phase"
+    },
+    {
+        "id": "IDS_DLG_REF_SAVE",
+        "text": "Referenz speichern"
+    },
+    {
+        "id": "IDS_DLG_REF_CLEAR",
+        "text": "Alle löschen"
+    },
+    {
+        "id": "IDS_DLG_REF_OPTIONS",
+        "text": "Referenzkurven"
+    },
+    {
+        "id": "IDS_DLG_REF_STORED",
+        "text": "Gespeicherte Referenzen"
     }
 ]

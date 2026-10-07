@@ -105,7 +105,7 @@
     },
     {
         "id": "IDS_MSG_SET_DEF_CAL_SETTING",
-        "text": "All calibration settings will be saved as default!"
+        "text": "All calibration settings will be reset to their default values!"
     },
     {
         "id": "IDS_MSG_ALL_CHANNEL_DISABLE",
@@ -201,7 +201,7 @@
     },
     {
         "id": "IDS_MSG_FAIL_TO_LOAD",
-        "text": "Failed to load"
+        "text": "Failed to load "
     },
     {
         "id": "IDS_MSG_HARDWARE_ERROR",
@@ -312,14 +312,6 @@
         "text": "Export Data"
     },
     {
-        "id": "IDS_MSG_STORESESS_EXPORTPROC_ERROR2",
-        "text": "buffer malloc failed."
-    },
-    {
-        "id": "IDS_MSG_EXPORT_DATA",
-        "text": "Export Data"
-    },
-    {
         "id": "IDS_MSG_DECODERSTACK_DECODE_WORK_ERROR",
         "text": "One or more required channels have not been specified!"
     },
@@ -421,11 +413,11 @@
     },
     {
         "id": "IDS_MSG_STACKING_INSTANT_MANUAL_SHIFT",
-        "text": "Instant capture used manual shift only. Trigger point alignment was skipped."
+        "text": "Instant capture used manual alignment only. Trigger point alignment was skipped."
     },
     {
         "id": "IDS_MSG_STACKING_SYNC_TRIGGER_MISSING",
-        "text": "Sync trigger was not reported by both analyzers. Only manual shift applied."
+        "text": "Sync trigger was not reported by both analyzers. Only manual alignment applied."
     },
     {
         "id": "IDS_MSG_STACKING_REMAP_REQUIRED_LOAD",
@@ -458,5 +450,21 @@
     {
         "id": "IDS_MSG_STACKING_ALIGNMENT_REJECTED",
         "text": "Stacking reference alignment skipped: reference edge offsets vary by %1 samples."
+    },
+    {
+        "id": "IDS_MSG_DRIVER_HINT_TITLE",
+        "text": "Hardware driver note"
+    },
+    {
+        "id": "IDS_MSG_DRIVER_HINT_WIN",
+        "text": "DreamSourceLab hardware needs a WinUSB driver to be recognized by Windows. If your device does not appear in the device list, install a WinUSB driver for it (for example with the free 'Zadig' tool), then reconnect the device."
+    },
+    {
+        "id": "IDS_MSG_DRIVER_HINT_LINUX",
+        "text": "DreamSourceLab hardware needs a udev rule granting USB access, which was not found on this system. Create /etc/udev/rules.d/60-dreamsourcelab.rules with the following line, then run 'sudo udevadm control --reload-rules':\n\nSUBSYSTEM==\"usb\", ATTRS{idVendor}==\"2a0e\", MODE=\"0666\""
+    },
+    {
+        "id": "IDS_MSG_DRIVER_HINT_LINUX_BUNDLED",
+        "text": "DreamSourceLab hardware needs a udev rule granting USB access, which was not found on this system (this is normal when running the AppImage). To install it, run:\n\nsudo cp \"%1\" /etc/udev/rules.d/ && sudo udevadm control --reload-rules"
     }
 ]

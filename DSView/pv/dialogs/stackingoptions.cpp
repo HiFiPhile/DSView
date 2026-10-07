@@ -76,7 +76,7 @@ StackingOptions::StackingOptions(QWidget *parent, SigSession *session) :
     form->addRow(L_S(STR_PAGE_DLG, S_ID(IDS_DLG_MASTER), "Master"), _master);
     form->addRow(L_S(STR_PAGE_DLG, S_ID(IDS_DLG_SECONDARY), "Secondary"), _secondary);
     form->addRow(L_S(STR_PAGE_DLG, S_ID(IDS_DLG_SECONDARY_SYNC_INPUT), "Secondary sync input"), _sync_channel);
-    form->addRow(L_S(STR_PAGE_DLG, S_ID(IDS_DLG_SECONDARY_MANUAL_SHIFT), "Secondary manual shift"), _manual_shift_ns);
+    form->addRow(L_S(STR_PAGE_DLG, S_ID(IDS_DLG_SECONDARY_MANUAL_SHIFT), "Secondary manual alignment"), _manual_shift_ns);
     form->addRow(QString(), _show_sync);
     form->addRow(QString(), _reference_alignment);
     form->addRow(QString(), _drift_correction);

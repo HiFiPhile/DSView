@@ -1,11 +1,11 @@
 [
     {
         "id": "IDS_MSG_THEME_RESTART",
-        "text": "Starten Sie DSView neu, um die Fensterdekorationen und Transparenz für dieses Design anzuwenden."
+        "text": "Starten Sie DSView neu, damit die Fensterdekoration und die Transparenz dieses Designs wirksam werden."
     },
     {
         "id": "IDS_MSG_OK",
-        "text": "Ok"
+        "text": "OK"
     },
     {
         "id": "IDS_MSG_SKIP",
@@ -29,11 +29,11 @@
     },
     {
         "id": "IDS_MSG_CONTINUE",
-        "text": "Weiter"
+        "text": "Fortfahren"
     },
     {
         "id": "IDS_MSG_AUTO_CALIB_START",
-        "text": "Die automatische Kalibrierung wird gestartet. Keine Sonden anschließen. \nDies kann einen Moment dauern!"
+        "text": "Die automatische Kalibrierung wird jetzt gestartet. Schließen Sie keine Tastköpfe an.\nDer Vorgang kann eine Weile dauern."
     },
     {
         "id": "IDS_MSG_AUTO_CALIB",
@@ -41,63 +41,63 @@
     },
     {
         "id": "IDS_MSG_ADJUST_SAVE",
-        "text": "Bitte Nullpunkt-Offset anpassen und das Ergebnis speichern"
+        "text": "Bitte gleichen Sie den Nullpunkt ab und speichern Sie anschließend das Ergebnis."
     },
     {
         "id": "IDS_MSG_SAVE_CAPDATE",
-        "text": "Aufgezeichnete Daten speichern?"
+        "text": "Erfasste Daten speichern?"
     },
     {
         "id": "IDS_MSG_NOT_FOND_DEFAULT_PROFILE",
-        "text": "Keine Standardsitzung für dieses Gerät gefunden!"
+        "text": "Für dieses Gerät wurde keine Standardsitzung gefunden."
     },
     {
         "id": "IDS_MSG_OPEN_FILE_ERROR",
-        "text": "Fehler beim Öffnen der Datei!"
+        "text": "Die Datei konnte nicht geöffnet werden."
     },
     {
         "id": "IDS_MSG_PROFILE_NOT_COMPATIBLE",
-        "text": "Sitzung ist nicht kompatibel mit dem aktuellen Gerät oder Modus!"
+        "text": "Die Sitzung passt nicht zum aktuellen Gerät oder Modus."
     },
     {
         "id": "IDS_MSG_RESTORE_WINDOW_ERROR",
-        "text": "Fehler beim Wiederherstellen des Fensterstatus!"
+        "text": "Der Fensterzustand konnte nicht wiederhergestellt werden."
     },
     {
         "id": "IDS_MSG_DECODE_INVAILD_CURSOR",
-        "text": "Ungültiger Cursorindex für den Abtastbereich!"
+        "text": "Ungültige Cursorauswahl für den Sample-Bereich."
     },
     {
         "id": "IDS_MSG_SEL_FILENAME",
-        "text": "Bitte einen Dateinamen auswählen."
+        "text": "Bitte wählen Sie einen Dateinamen."
     },
     {
         "id": "IDS_MSG_DECODER_REPEAT",
-        "text": "Doppelte ID oder Name in den Dekodierern gefunden:"
+        "text": "Doppelte ID oder doppelter Name bei den Decodern:"
     },
     {
         "id": "IDS_MSG_DECODER_LIST_EMPTY",
-        "text": "Dekodierliste ist leer!"
+        "text": "Die Decoderliste ist leer."
     },
     {
         "id": "IDS_MSG_NO_SEL_DECODER",
-        "text": "Bitte einen Dekodierer auswählen!"
+        "text": "Bitte wählen Sie einen Decoder aus."
     },
     {
         "id": "IDS_MSG_FIND_BASE_DECODER_ERROR",
-        "text": "Kein entsprechender Basis-Dekodierer gefunden!"
+        "text": "Kein passender Basis-Decoder gefunden."
     },
     {
         "id": "IDS_MSG_NO_DECODER_DEL",
-        "text": "Kein Dekodierer zum Entfernen vorhanden!"
+        "text": "Es ist kein Decoder zum Entfernen vorhanden."
     },
     {
         "id": "IDS_MSG_DECODER_CONFIRM_DEL_ALL",
-        "text": "Alle Dekodierer wirklich entfernen?"
+        "text": "Wirklich alle Decoder entfernen?"
     },
     {
         "id": "IDS_MSG_DECODER_CONFIRM_DEL",
-        "text": "Diesen Dekodierer wirklich entfernen?"
+        "text": "Diesen Decoder wirklich entfernen?"
     },
     {
         "id": "IDS_MSG_CLOSE_DEVICE",
@@ -105,15 +105,15 @@
     },
     {
         "id": "IDS_MSG_SET_DEF_CAL_SETTING",
-        "text": "Alle Kalibrierungseinstellungen werden als Standard gespeichert!"
+        "text": "Alle Kalibrierwerte werden auf die Standardwerte zurückgesetzt."
     },
     {
         "id": "IDS_MSG_ALL_CHANNEL_DISABLE",
-        "text": "Alle Kanäle deaktiviert! Bitte mindestens einen Kanal aktivieren."
+        "text": "Alle Kanäle sind deaktiviert. Bitte aktivieren Sie mindestens einen Kanal."
     },
     {
         "id": "IDS_MSG_MAX_CHANNEL_COUNT_WARNING",
-        "text": "Aktueller Modus unterstützt maximal {0} Kanäle!"
+        "text": "Im aktuellen Modus sind höchstens {0} Kanäle möglich."
     },
     {
         "id": "IDS_MSG_TRI_SET_ISSUE",
@@ -121,51 +121,51 @@
     },
     {
         "id": "IDS_MSG_CHANGE_HOR_TRI_POS_FAIL",
-        "text": "Änderung der horizontalen Triggerposition fehlgeschlagen!"
+        "text": "Die horizontale Triggerposition konnte nicht geändert werden."
     },
     {
         "id": "IDS_MSG_CHANGE_TRI_HOLDOFF_TIME_FAIL",
-        "text": "Änderung der Trigger-Haltezeit fehlgeschlagen!"
+        "text": "Die Holdoff-Zeit konnte nicht geändert werden."
     },
     {
         "id": "IDS_MSG_CHANGE_SENSITIVITY_FAIL",
-        "text": "Änderung der Trigger-Empfindlichkeit fehlgeschlagen!"
+        "text": "Die Triggerempfindlichkeit konnte nicht geändert werden."
     },
     {
         "id": "IDS_MSG_CHANGE_SOURCE_FAIL",
-        "text": "Änderung der Triggerquelle fehlgeschlagen!"
+        "text": "Die Triggerquelle konnte nicht geändert werden."
     },
     {
         "id": "IDS_MSG_CHANGE_CHANNEL_FAIL",
-        "text": "Änderung des Triggerkanals fehlgeschlagen!"
+        "text": "Der Triggerkanal konnte nicht geändert werden."
     },
     {
         "id": "IDS_MSG_CHANGE_TYPE_FAIL",
-        "text": "Änderung des Triggertyps fehlgeschlagen!"
+        "text": "Der Triggertyp konnte nicht geändert werden."
     },
     {
         "id": "IDS_MSG_PLEASE_INSERT_CURSOR",
-        "text": "Bitte zuerst einen Cursor einfügen, um die Cursormessung zu verwenden."
+        "text": "Bitte setzen Sie zuerst einen Cursor, um die Cursormessung zu verwenden."
     },
     {
         "id": "IDS_MSG_SEARCH",
-        "text": "Suchen"
+        "text": "Suche"
     },
     {
         "id": "IDS_MSG_NO_SAMPLE_DATA",
-        "text": "Keine Abtastdaten vorhanden!"
+        "text": "Keine erfassten Daten vorhanden."
     },
     {
         "id": "IDS_MSG_SEARCH_AT_START",
-        "text": "Suchcursor an Anfangsposition!"
+        "text": "Der Suchcursor steht bereits am Anfang."
     },
     {
         "id": "IDS_MSG_PATTERN_NOT_FOUND",
-        "text": "Muster nicht gefunden!"
+        "text": "Muster nicht gefunden."
     },
     {
         "id": "IDS_MSG_SEARCH_AT_END",
-        "text": "Suchcursor an Endposition!"
+        "text": "Der Suchcursor steht bereits am Ende."
     },
     {
         "id": "IDS_MSG_TRIGGER",
@@ -173,15 +173,15 @@
     },
     {
         "id": "IDS_MSG_STREAM_NO_AD_TRIGGER",
-        "text": "Stream-Modus unterstützt keinen erweiterten Trigger!"
+        "text": "Im Stream-Modus ist der erweiterte Trigger nicht verfügbar."
     },
     {
         "id": "IDS_MSG_AD_TRIGGER_NEED_HARDWARE",
-        "text": "Erweiterter Trigger benötigt DSLogic-Hardware-Unterstützung!"
+        "text": "Der erweiterte Trigger erfordert DSLogic-Hardware."
     },
     {
         "id": "IDS_MSG_SET_TRI_MULTI_CHANNEL",
-        "text": "Trigger auf mehreren Kanälen gesetzt!\nAufnahme wird nur ausgelöst, wenn alle gesetzten Kanäle zur gleichen Abtastzeit erfüllt sind"
+        "text": "Trigger auf mehreren Kanälen gesetzt.\nEs wird nur ausgelöst, wenn alle gesetzten Kanäle ihre Bedingung im selben Sample erfüllen."
     },
     {
         "id": "IDS_MSG_NOT_SHOW_AGAIN",
@@ -201,23 +201,23 @@
     },
     {
         "id": "IDS_MSG_FAIL_TO_LOAD",
-        "text": "Laden fehlgeschlagen"
+        "text": "Fehler beim Laden von "
     },
     {
         "id": "IDS_MSG_HARDWARE_ERROR",
-        "text": "Hardwarefehler"
+        "text": "Hardwarezugriff fehlgeschlagen"
     },
     {
         "id": "IDS_MSG_HARDWARE_ERROR_DET",
-        "text": "Bitte Gerät erneut einstecken, um die Hardwarekonfiguration zu aktualisieren!"
+        "text": "Bitte stecken Sie das Gerät ab und wieder an, um die Hardwarekonfiguration neu zu laden."
     },
     {
         "id": "IDS_MSG_MALLOC_ERROR",
-        "text": "Speicherreservierungsfehler"
+        "text": "Speicherfehler"
     },
     {
         "id": "IDS_MSG_MALLOC_ERROR_DET",
-        "text": "Nicht genug Speicher für diese Abtastung!\nBitte Abtasttiefe reduzieren!"
+        "text": "Nicht genügend Arbeitsspeicher für diese Erfassung.\nBitte verringern Sie die Anzahl der Samples."
     },
     {
         "id": "IDS_MSG_PACKET_ERROR",
@@ -225,7 +225,7 @@
     },
     {
         "id": "IDS_MSG_PACKET_ERROR_DET",
-        "text": "Das empfangene Paketformat ist falsch!"
+        "text": "Das empfangene Datenpaket hat ein ungültiges Format."
     },
     {
         "id": "IDS_MSG_DATA_OVERFLOW",
@@ -233,7 +233,7 @@
     },
     {
         "id": "IDS_MSG_DATA_OVERFLOW_DET",
-        "text": "USB-Bandbreite kann die aktuelle Abtastrate nicht unterstützen!\nBitte Abtastrate reduzieren!"
+        "text": "Die USB-Bandbreite reicht für die eingestellte Abtastrate nicht aus.\nBitte verringern Sie die Abtastrate."
     },
     {
         "id": "IDS_MSG_UNDEFINED_ERROR",
@@ -241,55 +241,55 @@
     },
     {
         "id": "IDS_MSG_UNDEFINED_ERROR_DET",
-        "text": "Unerwarteter Fehler!"
+        "text": "Ein unerwarteter Fehler ist aufgetreten."
     },
     {
         "id": "IDS_MSG_STORESESS_SAVESTART_ERROR1",
-        "text": "DSView unterstützt derzeit keine\nDateispeicherung für mehrere Datentypen."
+        "text": "DSView kann derzeit keine Dateien\nmit mehreren Datentypen speichern."
     },
     {
         "id": "IDS_MSG_STORESESS_SAVESTART_ERROR2",
-        "text": "Keine Daten zum Speichern."
+        "text": "Keine Daten zum Speichern vorhanden."
     },
     {
         "id": "IDS_MSG_STORESESS_SAVESTART_ERROR3",
-        "text": "Kein Dateiname."
+        "text": "Kein Dateiname angegeben."
     },
     {
         "id": "IDS_MSG_STORESESS_SAVESTART_ERROR4",
-        "text": "Erstellen der temporären Dateidaten fehlgeschlagen."
+        "text": "Die temporären Dateidaten konnten nicht erzeugt werden."
     },
     {
         "id": "IDS_MSG_STORESESS_SAVESTART_ERROR5",
-        "text": "Erstellen der Dekodierer-Dateidaten fehlgeschlagen."
+        "text": "Die Decoder-Daten konnten nicht erzeugt werden."
     },
     {
         "id": "IDS_MSG_STORESESS_SAVESTART_ERROR6",
-        "text": "Erstellen der Sitzungs-Dateidaten fehlgeschlagen."
+        "text": "Die Sitzungsdaten konnten nicht erzeugt werden."
     },
     {
         "id": "IDS_MSG_STORESESS_SAVESTART_ERROR7",
-        "text": "Erstellen der ZIP-Datei fehlgeschlagen."
+        "text": "Die ZIP-Datei konnte nicht erzeugt werden."
     },
     {
         "id": "IDS_MSG_STORESESS_SAVEPROC_ERROR1",
-        "text": "ZIP-Datei konnte nicht erstellt werden, Speicherreservierungsfehler."
+        "text": "Die ZIP-Datei konnte nicht erstellt werden: Speicherzuweisung fehlgeschlagen."
     },
     {
         "id": "IDS_MSG_STORESESS_SAVEPROC_ERROR2",
-        "text": "ZIP-Datei konnte nicht erstellt werden, bitte Schreibberechtigung für diesen Pfad prüfen."
+        "text": "Die ZIP-Datei konnte nicht erstellt werden. Bitte prüfen Sie die Schreibrechte für diesen Pfad."
     },
     {
         "id": "IDS_MSG_STORESESS_EXPORTSTART_ERROR1",
-        "text": "DSView unterstützt derzeit keinen\nDateiexport für mehrere Datentypen."
+        "text": "DSView kann derzeit keine Dateien\nmit mehreren Datentypen exportieren."
     },
     {
         "id": "IDS_MSG_STORESESS_EXPORTSTART_ERROR2",
-        "text": "Keine Daten zum Speichern."
+        "text": "Keine Daten zum Speichern vorhanden."
     },
     {
         "id": "IDS_MSG_STORESESS_EXPORTSTART_ERROR3",
-        "text": "Kein Dateiname gesetzt."
+        "text": "Kein Dateiname angegeben."
     },
     {
         "id": "IDS_MSG_STORESESS_EXPORTSTART_ERROR4",
@@ -301,7 +301,7 @@
     },
     {
         "id": "IDS_MSG_STORESESS_EXPORTPROC_ERROR2",
-        "text": "Pufferspeicher fehlgeschlagen."
+        "text": "Puffer konnte nicht reserviert werden."
     },
     {
         "id": "IDS_MSG_SAVE_FILE",
@@ -313,7 +313,7 @@
     },
     {
         "id": "IDS_MSG_DECODERSTACK_DECODE_WORK_ERROR",
-        "text": "Ein oder mehrere erforderliche Kanäle wurden nicht angegeben!"
+        "text": "Mindestens ein erforderlicher Kanal ist nicht zugewiesen."
     },
     {
         "id": "IDS_MSG_DECODERSTACK_DECODE_DATA_ERROR",
@@ -321,19 +321,19 @@
     },
     {
         "id": "IDS_MSG_DECODERSTACK_DECODE_STACK_ERROR",
-        "text": "Dekodierer-Instanz konnte nicht erstellt werden"
+        "text": "Die Decoder-Instanz konnte nicht erzeugt werden."
     },
     {
         "id": "IDS_MSG_MESSAGE",
-        "text": "Nachricht"
+        "text": "Meldung"
     },
     {
         "id": "IDS_MSG_BOX_CONFIRM",
-        "text": "Bestätigen"
+        "text": "Bestätigung"
     },
     {
         "id": "IDS_MSG_NO_DATA",
-        "text": "Keine Daten vorhanden!"
+        "text": "Keine Daten vorhanden."
     },
     {
         "id": "IDS_MSG_TO_SWITCH_DEVICE",
@@ -341,54 +341,130 @@
     },
     {
         "id": "IDS_MSG_DISABLED_CHANNEL_TRIG",
-        "text": "Deaktivierte Kanäle können nicht für den Trigger verwendet werden!"
+        "text": "Deaktivierte Kanäle können nicht zum Triggern verwendet werden."
     },
     {
         "id": "IDS_MSG_TO_RECONNECT_FOR_FIRMWARE",
-        "text": "Die Firmware-Version ist falsch, bitte Gerät erneut einstecken!"
+        "text": "Die Firmware-Version passt nicht. Bitte stecken Sie das Gerät ab und wieder an."
     },
     {
         "id": "IDS_MSG_DEVICE_BUSY_SWITCH_FAILED",
-        "text": "Das Gerät ist belegt, Wechsel fehlgeschlagen!"
+        "text": "Das Gerät ist belegt, der Wechsel ist fehlgeschlagen."
     },
     {
         "id": "IDS_MSG_DEVICE_NO_DRIVER",
-        "text": "Der Gerätetreiber ist möglicherweise nicht installiert!"
+        "text": "Der Gerätetreiber ist möglicherweise nicht installiert."
     },
     {
         "id": "IDS_MSG_NO_ENABLED_CHANNEL",
-        "text": "Keine Kanäle aktiviert!"
+        "text": "Keine Kanäle aktiviert."
     },
     {
         "id": "IDS_MSG_FILE_NOT_EXIST",
-        "text": "Datei existiert nicht!"
+        "text": "Die Datei existiert nicht."
     },
     {
         "id": "IDS_MSG_TO_CLEAR_LOG",
-        "text": "Protokolldatei wirklich löschen?"
+        "text": "Logdatei wirklich leeren?"
     },
     {
         "id": "IDS_MSG_DEVICE_SPEED_TOO_LOW",
-        "text": "Fehler: USB-Port-Geschwindigkeit ist zu niedrig (<480 Mbit/s)!"
+        "text": "Fehler: Der USB-Anschluss ist zu langsam (< 480 Mbit/s)."
     },
     {
         "id": "IDS_MSG_FIRMWARE_NOT_EXIST",
-        "text": "Fehler: Firmware-Datei existiert nicht!"
+        "text": "Fehler: Die Firmware-Datei existiert nicht."
     },
     {
         "id": "IDS_MSG_DEVICE_USB_IO_ERROR",
-        "text": "Fehler: USB-IO-Fehler!"
+        "text": "Fehler: USB-I/O-Fehler."
     },
     {
         "id": "IDS_MSG_DATA_RANGE_ERROR",
-        "text": "Datenbereich ist fehlerhaft!"
+        "text": "Ungültiger Datenbereich."
     },
     {
         "id": "IDS_MSG_DATA_RANGE_HAVE_NO_DATA",
-        "text": "Keine Daten im Datenbereich!"
+        "text": "Im gewählten Bereich sind keine Daten vorhanden."
     },
     {
         "id": "IDS_MSG_NO_DECODED_RESULT",
-        "text": "Keine Daten zum Exportieren!"
+        "text": "Keine Daten zum Exportieren vorhanden."
+    },
+    {
+        "id": "IDS_MSG_STACKING_CONNECT_TWO_ANALYZERS",
+        "text": "Bitte schließen Sie zuerst zwei DSLogic U3Pro32 an."
+    },
+    {
+        "id": "IDS_MSG_STACKING_SELECT_DIFFERENT_ANALYZERS",
+        "text": "Bitte wählen Sie zwei verschiedene DSLogic U3Pro32 aus."
+    },
+    {
+        "id": "IDS_MSG_STACKING_SESSION_BUSY",
+        "text": "Der Stacking-Modus konnte nicht übernommen werden, da die Sitzung gerade beschäftigt ist."
+    },
+    {
+        "id": "IDS_MSG_STACKING_MASTER_INCOMPLETE",
+        "text": "Stacking: Das Hauptgerät hat nur %1 von %2 angeforderten Samples geliefert."
+    },
+    {
+        "id": "IDS_MSG_STACKING_SECONDARY_INCOMPLETE",
+        "text": "Stacking: Die Daten des Zweitgeräts decken den Bereich nicht vollständig ab (Verschiebung=%1 Samples, vorhanden=%2 Samples, benötigt=[%3, %4])."
+    },
+    {
+        "id": "IDS_MSG_STACKING_INSTANT_MANUAL_SHIFT",
+        "text": "Sofort-Erfassung: Es wurde nur die manuelle Ausrichtung angewendet, die Ausrichtung am Triggerzeitpunkt entfällt."
+    },
+    {
+        "id": "IDS_MSG_STACKING_SYNC_TRIGGER_MISSING",
+        "text": "Der Sync-Trigger wurde nicht von beiden Analysatoren gemeldet. Es wurde nur die manuelle Ausrichtung angewendet."
+    },
+    {
+        "id": "IDS_MSG_STACKING_REMAP_REQUIRED_LOAD",
+        "text": "Die in dieser Stacking-Sitzung gespeicherten Analysatoren wurden nicht gefunden. Öffnen Sie die Stacking-Einstellungen und ordnen Sie Haupt- und Zweitgerät neu zu, um die gespeicherte Konfiguration zu verwenden."
+    },
+    {
+        "id": "IDS_MSG_STACKING_REMAP_REQUIRED_START",
+        "text": "Der Stacking-Modus benötigt zwei zugeordnete DSLogic U3Pro32. Öffnen Sie die Stacking-Einstellungen und wählen Sie Haupt- und Zweitgerät aus."
+    },
+    {
+        "id": "IDS_MSG_STACKING_DRIFT_APPLIED",
+        "text": "Stacking-Driftkorrektur angewendet: Drift des Zweitgeräts %1 ppm, ermittelt aus %2 Referenzflanken."
+    },
+    {
+        "id": "IDS_MSG_STACKING_DRIFT_FAILED",
+        "text": "Stacking-Driftkorrektur übersprungen: zu wenige übereinstimmende Referenzflanken auf den gewählten Kanälen."
+    },
+    {
+        "id": "IDS_MSG_STACKING_DRIFT_REJECTED",
+        "text": "Stacking-Driftkorrektur übersprungen: Die geschätzte Drift von %1 ppm liegt außerhalb des erwarteten Bereichs."
+    },
+    {
+        "id": "IDS_MSG_STACKING_ALIGNMENT_APPLIED",
+        "text": "Stacking-Referenzausrichtung angewendet: Versatz des Zweitgeräts %1 Samples (%2 ns), ermittelt aus %3 Referenzflanken."
+    },
+    {
+        "id": "IDS_MSG_STACKING_ALIGNMENT_FAILED",
+        "text": "Stacking-Referenzausrichtung übersprungen: zu wenige übereinstimmende Referenzflanken auf den gewählten Kanälen."
+    },
+    {
+        "id": "IDS_MSG_STACKING_ALIGNMENT_REJECTED",
+        "text": "Stacking-Referenzausrichtung übersprungen: Die Versätze der Referenzflanken schwanken um %1 Samples."
+    },
+    {
+        "id": "IDS_MSG_DRIVER_HINT_TITLE",
+        "text": "Hinweis zum Hardwaretreiber"
+    },
+    {
+        "id": "IDS_MSG_DRIVER_HINT_WIN",
+        "text": "Damit Windows DreamSourceLab-Hardware erkennt, wird ein WinUSB-Treiber benötigt. Falls Ihr Gerät nicht in der Geräteliste erscheint, installieren Sie dafür einen WinUSB-Treiber (zum Beispiel mit dem kostenlosen Tool „Zadig“) und schließen Sie das Gerät anschließend erneut an."
+    },
+    {
+        "id": "IDS_MSG_DRIVER_HINT_LINUX",
+        "text": "Für den USB-Zugriff auf DreamSourceLab-Hardware wird eine udev-Regel benötigt, die auf diesem System nicht gefunden wurde. Legen Sie die Datei /etc/udev/rules.d/60-dreamsourcelab.rules mit der folgenden Zeile an und führen Sie anschließend 'sudo udevadm control --reload-rules' aus:\n\nSUBSYSTEM==\"usb\", ATTRS{idVendor}==\"2a0e\", MODE=\"0666\""
+    },
+    {
+        "id": "IDS_MSG_DRIVER_HINT_LINUX_BUNDLED",
+        "text": "Für den USB-Zugriff auf DreamSourceLab-Hardware wird eine udev-Regel benötigt, die auf diesem System nicht gefunden wurde (bei Verwendung des AppImage ist das normal). Zur Installation führen Sie Folgendes aus:\n\nsudo cp \"%1\" /etc/udev/rules.d/ && sudo udevadm control --reload-rules"
     }
 ]

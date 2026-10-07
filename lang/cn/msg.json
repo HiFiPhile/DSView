@@ -420,11 +420,11 @@
     },
     {
         "id": "IDS_MSG_STACKING_INSTANT_MANUAL_SHIFT",
-        "text": "堆叠即时采集仅使用手动偏移; 已跳过同步沿对齐。"
+        "text": "堆叠即时采集仅使用手动对齐; 已跳过同步沿对齐。"
     },
     {
         "id": "IDS_MSG_STACKING_SYNC_TRIGGER_MISSING",
-        "text": "两台分析仪未同时报告堆叠同步触发; 仅使用手动偏移。"
+        "text": "两台分析仪未同时报告堆叠同步触发; 仅使用手动对齐。"
     },
     {
         "id": "IDS_MSG_STACKING_REMAP_REQUIRED_LOAD",

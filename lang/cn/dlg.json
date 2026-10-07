@@ -981,7 +981,7 @@
     },
     {
         "id": "IDS_DLG_SECONDARY_MANUAL_SHIFT",
-        "text": "次分析仪手动偏移"
+        "text": "次分析仪手动对齐"
     },
     {
         "id": "IDS_DLG_STACKING_DRIFT_CORRECTION",
