@@ -78,6 +78,10 @@ PYTHON_VERSION="3.14.2"
 TARGET="x86_64"
 LINKING="static" # shared linking usually fails with mxe
 
+## Qt major version: 6 or 5
+## Qt 6 does not support 32-bit Windows, use Qt 5 for an i686 build.
+QT_MAJOR=${QT_MAJOR:-6}
+
 ## Path to MXE installation
 MXE_HOME=${MXE_HOME:-$HOME/src/mxe}
 
@@ -92,7 +96,19 @@ die() {
 }
 
 # MXE packages to build
-MXE_BUILD_PACKAGES="fftw libusb1 qtbase qtwinextras boost glib zlib gendef nsis"
+case ${QT_MAJOR} in
+    6)
+        [ $TARGET = "x86_64" ] || die "Qt 6 does not support 32-bit Windows. Set QT_MAJOR=5 for an i686 build."
+        QT_PACKAGES="qt6-qtbase qt6-qtsvg qt6-qt5compat"
+        ;;
+    5)
+        QT_PACKAGES="qtbase qtsvg"
+        ;;
+    *)
+        die "Unsupported QT_MAJOR: ${QT_MAJOR} (must be 5 or 6)"
+        ;;
+esac
+MXE_BUILD_PACKAGES="fftw libusb1 ${QT_PACKAGES} boost glib zlib gendef nsis"
 
 # Determine number of CPU cores for parallel builds
 CORE_COUNT=$( nproc --all 2>/dev/null || sysctl -n hw.ncpu 2>/dev/null || echo 1 )
@@ -165,6 +181,7 @@ mkdir -p ${PYTHON_SETUP_DIR}/include
 unzip -o ${PYTHON_DOWNLOAD_DIR}/${PYTHON_EMBED_FILENAME} \
         -d ${PYTHON_SETUP_DIR}/python-dist \
         '*.dll' \
+        '*.pyd' \
         '*.zip' \
         || die "Failed to extract Python embedded distribution!"
 echo "Python embedded distribution extracted."
@@ -224,7 +241,19 @@ export PATH="${MXE_HOME}/usr/bin:${PATH}"
 
 ${MXE_HOME}/usr/bin/${MXE_TARGET}-pkg-config python3 || die "Error: pkg-config cannot find python3!"
 
-${MXE_HOME}/usr/bin/${MXE_TARGET}-cmake .. # -DCMAKE_PREFIX_PATH="${MXE_HOME}/usr/${MXE_TARGET}/qt6"
+# MXE installs Qt 6 into its own prefix, which is not searched by default.
+# CMakeLists.txt silently falls back to Qt 5 when it cannot find Qt 6, so
+# pin the choice explicitly. This also switches a build directory that was
+# configured for the other Qt version.
+MXE_PREFIX="${MXE_HOME}/usr/${MXE_TARGET}"
+if [ ${QT_MAJOR} = 6 ]; then
+    QT_CMAKE_OPTS=(-DCMAKE_PREFIX_PATH="${MXE_PREFIX}/qt6;${MXE_PREFIX}" -DCMAKE_DISABLE_FIND_PACKAGE_Qt6Core=FALSE)
+else
+    QT_CMAKE_OPTS=(-DCMAKE_PREFIX_PATH="${MXE_PREFIX}" -DCMAKE_DISABLE_FIND_PACKAGE_Qt6Core=TRUE)
+fi
+
+${MXE_HOME}/usr/bin/${MXE_TARGET}-cmake "${QT_CMAKE_OPTS[@]}" .. || die "Error configuring DSView!"
+grep -q "^Qt${QT_MAJOR}Core_DIR:PATH=/" CMakeCache.txt || die "Error: CMake did not find Qt ${QT_MAJOR}!"
 ${MXE_HOME}/usr/bin/${MXE_TARGET}-cmake --build . -j${CORE_COUNT} || die "Error building DSView!"
 
 echo "Build complete. The DSView executable can be found in ../build.dir/."
