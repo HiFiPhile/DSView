@@ -1,0 +1,46 @@
+[
+    {
+        "id": "Buffer Mode",
+        "text": "Buffer mode"
+    },
+    {
+        "id": "Stream Mode",
+        "text": "Stream mode"
+    },
+    {
+        "id": "Internal Test",
+        "text": "Internal test"
+    },
+    {
+        "id": "External Test",
+        "text": "External test"
+    },
+    {
+        "id": "DRAM Loopback Test",
+        "text": "DRAM loopback test"
+    },
+    {
+        "id": "1.8/2.5/3.3V Level",
+        "text": "1.8/2.5/3.3 V"
+    },
+    {
+        "id": "5.0V Level",
+        "text": "5.0 V"
+    },
+    {
+        "id": "None",
+        "text": "Off"
+    },
+    {
+        "id": "1 Sample Clock",
+        "text": "1 sample period"
+    },
+    {
+        "id": "Full Bandwidth",
+        "text": "Full bandwidth"
+    },
+    {
+        "id": "20MHz",
+        "text": "20 MHz"
+    }
+]

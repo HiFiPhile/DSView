@@ -1,0 +1,94 @@
+[
+    {
+        "id": "Sample count-actual",
+        "text": "Actual sample count"
+    },
+    {
+        "id": "Using External Clock",
+        "text": "Use external clock"
+    },
+    {
+        "id": "Ext. Clock Frequency [Hz]",
+        "text": "External clock frequency (Hz)"
+    },
+    {
+        "id": "Using Clock Negedge",
+        "text": "Sample on falling clock edge"
+    },
+    {
+        "id": "Operation Mode",
+        "text": "Operation mode"
+    },
+    {
+        "id": "Run Length Encoding",
+        "text": "Run-length encoding"
+    },
+    {
+        "id": "Wait Buffer Upload",
+        "text": "Wait for buffer upload"
+    },
+    {
+        "id": "Trigger hold off",
+        "text": "Trigger holdoff"
+    },
+    {
+        "id": "Trigger margin",
+        "text": "Trigger sensitivity"
+    },
+    {
+        "id": "Max Height",
+        "text": "Max height"
+    },
+    {
+        "id": "Max Height value",
+        "text": "Max height value"
+    },
+    {
+        "id": "Filter Targets",
+        "text": "Filter"
+    },
+    {
+        "id": "Stop Options",
+        "text": "On stop"
+    },
+    {
+        "id": "Channel Mode",
+        "text": "Channel mode"
+    },
+    {
+        "id": "Threshold Levels",
+        "text": "Logic level"
+    },
+    {
+        "id": "Threshold Level",
+        "text": "Threshold"
+    },
+    {
+        "id": "Enable RLE Compress",
+        "text": "Enable RLE compression"
+    },
+    {
+        "id": "Bandwidth Limit",
+        "text": "Bandwidth limit"
+    },
+    {
+        "id": "Probe Factor",
+        "text": "Probe attenuation"
+    },
+    {
+        "id": "Map Default",
+        "text": "Default scaling"
+    },
+    {
+        "id": "Map Unit",
+        "text": "Scaling unit"
+    },
+    {
+        "id": "Map Min",
+        "text": "Scaling min."
+    },
+    {
+        "id": "Map Max",
+        "text": "Scaling max."
+    }
+]

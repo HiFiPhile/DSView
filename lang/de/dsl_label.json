@@ -1,0 +1,150 @@
+[
+    {
+        "id": "Connection",
+        "text": "Verbindung"
+    },
+    {
+        "id": "Serial communication",
+        "text": "Serielle Schnittstelle"
+    },
+    {
+        "id": "Sample rate",
+        "text": "Abtastrate"
+    },
+    {
+        "id": "Sample count",
+        "text": "Anzahl Samples"
+    },
+    {
+        "id": "Sample count-actual",
+        "text": "Tatsächliche Anzahl Samples"
+    },
+    {
+        "id": "Using External Clock",
+        "text": "Externen Takt verwenden"
+    },
+    {
+        "id": "Ext. Clock Frequency [Hz]",
+        "text": "Frequenz des ext. Takts [Hz]"
+    },
+    {
+        "id": "Using Clock Negedge",
+        "text": "Mit fallender Taktflanke abtasten"
+    },
+    {
+        "id": "Pre-trigger capture ratio",
+        "text": "Pre-Trigger-Anteil"
+    },
+    {
+        "id": "Operation Mode",
+        "text": "Betriebsart"
+    },
+    {
+        "id": "Run Length Encoding",
+        "text": "Lauflängenkodierung (RLE)"
+    },
+    {
+        "id": "Wait Buffer Upload",
+        "text": "Auf Pufferübertragung warten"
+    },
+    {
+        "id": "Trigger slope",
+        "text": "Triggerflanke"
+    },
+    {
+        "id": "Trigger source",
+        "text": "Triggerquelle"
+    },
+    {
+        "id": "Trigger channel",
+        "text": "Triggerkanal"
+    },
+    {
+        "id": "Horizontal trigger position",
+        "text": "Horizontale Triggerposition"
+    },
+    {
+        "id": "Trigger hold off",
+        "text": "Holdoff-Zeit"
+    },
+    {
+        "id": "Trigger margin",
+        "text": "Triggerempfindlichkeit"
+    },
+    {
+        "id": "Buffer size",
+        "text": "Puffergröße"
+    },
+    {
+        "id": "Time base",
+        "text": "Zeitbasis"
+    },
+    {
+        "id": "Max Height",
+        "text": "Max. Höhe"
+    },
+    {
+        "id": "Max Height value",
+        "text": "Wert der max. Höhe"
+    },
+    {
+        "id": "Filter Targets",
+        "text": "Filter"
+    },
+    {
+        "id": "Datalog",
+        "text": "Datenlogger"
+    },
+    {
+        "id": "Stop Options",
+        "text": "Bei Stopp"
+    },
+    {
+        "id": "Channel Mode",
+        "text": "Kanalmodus"
+    },
+    {
+        "id": "Threshold Levels",
+        "text": "Logikpegel"
+    },
+    {
+        "id": "Threshold Level",
+        "text": "Schwellwert"
+    },
+    {
+        "id": "Enable RLE Compress",
+        "text": "RLE-Komprimierung aktivieren"
+    },
+    {
+        "id": "Bandwidth Limit",
+        "text": "Bandbreitenbegrenzung"
+    },
+    {
+        "id": "Coupling",
+        "text": "Kopplung"
+    },
+    {
+        "id": "Volts/div",
+        "text": "Volt/Div"
+    },
+    {
+        "id": "Probe Factor",
+        "text": "Tastkopffaktor"
+    },
+    {
+        "id": "Map Default",
+        "text": "Standardskalierung"
+    },
+    {
+        "id": "Map Unit",
+        "text": "Skalierungseinheit"
+    },
+    {
+        "id": "Map Min",
+        "text": "Skalierung Min."
+    },
+    {
+        "id": "Map Max",
+        "text": "Skalierung Max."
+    }
+]

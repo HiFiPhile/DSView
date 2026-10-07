@@ -142,5 +142,13 @@
     {
         "id": "Map Max",
         "text": "对应最大值"
+    },
+    {
+        "id": "Sample count-actual",
+        "text": "实际采样数"
+    },
+    {
+        "id": "Ext. Clock Frequency [Hz]",
+        "text": "外部时钟频率 [Hz]"
     }
 ]
