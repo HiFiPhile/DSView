@@ -226,12 +226,83 @@ const char* AnnotationResTable::format_to_string(const char *hex_str, int fmt)
     return data;    
 }
 
+static int hex_digit(char c)
+{
+	if (c >= '0' && c <= '9')
+		return c - '0';
+	if (c >= 'A' && c <= 'F')
+		return c - 'A' + 10;
+	if (c >= 'a' && c <= 'f')
+		return c - 'a' + 10;
+	return -1;
+}
+
+//append the bytes as text, as 48 69 0D 0A 'Hi\r\n'
+//only when they are all bytes and one of them is a printable char
+const char* AnnotationResTable::format_hex_ascii(const char *hex_str)
+{
+	 int len = strlen(hex_str);
+	 if (len > DECODER_MAX_DATA_BLOCK_LEN){
+		 return hex_str;
+	 }
+
+	 char *wr = g_hex_ascii_buf;
+	 memcpy(wr, hex_str, len);
+	 wr += len;
+	 *wr++ = ' ';
+	 *wr++ = '\'';
+
+	 bool has_text = false;
+	 const char *rd = hex_str;
+
+	 while (*rd)
+	 {
+		 //the split letter
+		 if (hex_digit(*rd) < 0){
+			 rd++;
+			 continue;
+		 }
+
+		 if (hex_digit(rd[1]) < 0 || hex_digit(rd[2]) >= 0){
+			 return hex_str; //not a byte
+		 }
+
+		 int c = hex_digit(rd[0]) * 16 + hex_digit(rd[1]);
+		 rd += 2;
+
+		 if (c >= 32 && c <= 126){
+			 *wr++ = (char)c;
+			 has_text = true;
+		 }
+		 else if (c == '\r' || c == '\n' || c == '\t'){
+			 *wr++ = '\\';
+			 *wr++ = c == '\r' ? 'r' : c == '\n' ? 'n' : 't';
+			 has_text = true;
+		 }
+		 else{
+			 *wr++ = '.';
+		 }
+	 }
+
+	 if (!has_text){
+		 return hex_str;
+	 }
+
+	 *wr++ = '\'';
+	 *wr = 0;
+	 return g_hex_ascii_buf;
+}
+
 const char* AnnotationResTable::format_numberic(const char *hex_str, int fmt)
 {
 	 assert(hex_str);
 
 	 if (hex_str[0] == 0 || fmt == DecoderDataFormat::hex){
 		 return hex_str;
+	 }
+
+	 if (fmt == DecoderDataFormat::hex_ascii){
+		 return format_hex_ascii(hex_str);
 	 }
 
 	 //check if have split letter

@@ -137,7 +137,10 @@ void ProtocolItemLayer::LoadFormatSelect(bool bSingle)
         _format_combox->addItem("bin");
     }
     _format_combox->addItem("ascii");
-    
+    if (!bSingle){
+        _format_combox->addItem("hex+ascii");
+    }
+
     _format_combox->setCurrentIndex(0);
     m_bSetting = false;
 }
