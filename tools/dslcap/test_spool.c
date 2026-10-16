@@ -175,7 +175,9 @@ int main(int argc, char **argv)
         assert(fgetc(out) == EOF);
         fclose(out);
 
-        /* Payload accounting crosses the old GByteArray 32-bit limit. */
+        /* Payload accounting crosses the old GByteArray 32-bit limit. The
+         * spool was last read: position it before writing (C11 7.21.5.3). */
+        assert(fseeko(g_raw, 0, SEEK_END) == 0);
         g_raw_bytes = UINT32_MAX - 3ULL;
         struct sr_datafeed_logic logic = {.length = 8, .format = LA_CROSS_DATA, .data = raw};
         struct sr_datafeed_packet packet = {.type = SR_DF_LOGIC, .payload = &logic};

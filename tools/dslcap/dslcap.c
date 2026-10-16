@@ -441,7 +441,12 @@ static int write_output(const char *path, int nch, uint64_t per_ch, uint64_t got
     }
     if (fclose(f)) failed = 1;
     /* link() publishes atomically and, unlike rename(), refuses to replace an existing capture. */
+#ifdef _WIN32
+    /* No link() on Windows, but there rename() refuses to replace too. */
+    if (!failed && rename(tmp, path)) failed = 1;
+#else
     if (!failed && link(tmp, path)) failed = 1;
+#endif
     unlink(tmp);  /* after link() the published name keeps the data; drop the temporary one either way */
     g_free(tmp);
     return failed ? -1 : 0;
@@ -535,14 +540,22 @@ static char *default_res_dir(void)
 {
     char exe[4096] = {0};
     char *dir = NULL;
-#ifdef __APPLE__
+#if defined(__APPLE__)
     uint32_t size = sizeof exe;
     if (_NSGetExecutablePath(exe, &size) != 0) exe[0] = '\0';
+#elif defined(_WIN32)
+    char *pgm = NULL;
+    if (_get_pgmptr(&pgm) == 0 && pgm && strlen(pgm) < sizeof exe)
+        strcpy(exe, pgm);
 #else
     ssize_t n = readlink("/proc/self/exe", exe, sizeof exe - 1);
     if (n < 0 || n >= (ssize_t)sizeof exe - 1) exe[0] = '\0';
 #endif
+#ifdef _WIN32
+    char *real = exe[0] ? _fullpath(NULL, exe, 0) : NULL;
+#else
     char *real = exe[0] ? realpath(exe, NULL) : NULL;
+#endif
     if (real) {
         dir = g_path_get_dirname(real);
         free(real);
@@ -765,9 +778,16 @@ int main(int argc, char **argv)
     char *spool = g_strdup_printf("%s.raw-XXXXXX", o.out);
     int fd = g_mkstemp(spool);
     if (fd >= 0) {
+#ifdef _WIN32
+        /* An open file cannot be unlinked: reopen it to be deleted on close. */
+        close(fd);
+        g_raw = fopen(spool, "w+bD");
+        if (!g_raw) unlink(spool);
+#else
         g_raw = fdopen(fd, "w+b");
         if (!g_raw) close(fd);
         unlink(spool);
+#endif
     }
     g_free(spool);
     if (!g_raw) { printf("{\"error\":\"cannot create capture spool\"}\n"); ds_lib_exit(); return finish_stdout(1); }
