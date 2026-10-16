@@ -61,6 +61,7 @@ class AnnotationResTable
 
     private:
         const char* format_to_string(const char *hex_str, int fmt);
+        const char* format_hex_ascii(const char *hex_str);
 
     private:
         std::map<std::string, int>          m_indexs;
@@ -69,4 +70,5 @@ class AnnotationResTable
         char g_oct_format_tmp_buffer[DECODER_MAX_DATA_BLOCK_LEN * 3 + 2];
         char g_number_tmp_64[30];
         char g_all_buf[CONVERT_STR_MAX_LEN + 1];
+        char g_hex_ascii_buf[DECODER_MAX_DATA_BLOCK_LEN * 2 + 5]; //hex, quoted text of up to 2 letters a byte
 };

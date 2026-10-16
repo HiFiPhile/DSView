@@ -174,6 +174,13 @@ const std::vector<QString>& Annotation::annotations() const
 			 const char *num_str = _status->m_resTable.format_numberic(resItem.str_number_hex, resItem.cur_display_format);
 			 resItem.cvt_lines.push_back(QString(num_str));
 		 }
+
+		 //where the text does not fit, show the hex value alone
+		 QString hex_line(resItem.str_number_hex);
+		 if (resItem.cur_display_format == DecoderDataFormat::hex_ascii
+				&& resItem.cvt_lines.back() != hex_line){
+			 resItem.cvt_lines.push_back(hex_line);
+		 }
 	 }
 
 	return resItem.cvt_lines;

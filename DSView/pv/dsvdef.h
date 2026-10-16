@@ -66,7 +66,8 @@ namespace DecoderDataFormat
         dec=1,       
         oct=2,
         bin=3,
-        ascii=4
+        ascii=4,
+        hex_ascii=5
     };
 
     int Parse(const char *name);       

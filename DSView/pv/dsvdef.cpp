@@ -47,6 +47,9 @@ namespace DecoderDataFormat
         if (strcmp(name, "ascii") == 0){
             return (int)ascii;
         }
+        if (strcmp(name, "hex+ascii") == 0){
+            return (int)hex_ascii;
+        }
         return (int)hex;
     }
 }
