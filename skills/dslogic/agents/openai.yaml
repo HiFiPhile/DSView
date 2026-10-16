@@ -1,0 +1,4 @@
+interface:
+  display_name: "DSLogic Capture"
+  short_description: "Capture logic signals with a DSLogic and decode protocols headlessly"
+  default_prompt: "Use $dslogic to capture signals with the DSLogic analyzer and decode them with dsldecode."
