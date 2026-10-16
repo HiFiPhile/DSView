@@ -834,3 +834,19 @@ else()
 	)
 	install(TARGETS dslcap DESTINATION ${CMAKE_INSTALL_BINDIR})
 endif()
+
+#===============================================================================
+#= dsldecode: headless protocol decoding command-line tool
+#-------------------------------------------------------------------------------
+add_executable(dsldecode tools/dsldecode/dsldecode.c ${common_SOURCES} ${libsigrokdecode4DSL_SOURCES})
+target_link_libraries(dsldecode -lz -lglib-2.0 ${CMAKE_THREAD_LIBS_INIT} ${PY_LIB})
+if(DSLCAP_MATH_LIBRARY)
+	target_link_libraries(dsldecode ${DSLCAP_MATH_LIBRARY})
+endif()
+
+if(WIN32)
+	# Next to DSView.exe, like the decoders and pylib directories it looks for.
+	install(TARGETS dsldecode DESTINATION .)
+else()
+	install(TARGETS dsldecode DESTINATION ${CMAKE_INSTALL_BINDIR})
+endif()
