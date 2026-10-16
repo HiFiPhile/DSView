@@ -4,12 +4,14 @@
  *   dslcap --list
  *   dslcap --channels 0,1 --samplerate 10000000 --samples 1000000
  *          [--vth 1.6] [--mode buffer|stream] [--trigger CH[:R|F|C|1|0]]
- *          [--trigpos PERCENT] [--timeout SEC] [--res DIR] --out /path/base
+ *          [--trigpos PERCENT] [--timeout SEC] [--res DIR] [--dsl] --out /path/base
  *
  * Writes <base>.bin: for each enabled channel in ascending order, the
  * channel's samples packed LSB-first, ceil(samples/64)*8 bytes per channel.
+ * With --dsl, writes <base>.dsl instead, a DSView session file to open and
+ * decode in DSView.
  * Prints one JSON object describing the capture on stdout; every failure
- * prints an object with an "error" key instead, and <base>.bin is only
+ * prints an object with an "error" key instead, and the output file is only
  * created for a complete capture.
  *
  * Exit status: 0 success, 1 runtime or I/O error, 2 invalid arguments or
@@ -26,10 +28,12 @@
 #include <stdlib.h>
 #include <string.h>
 #include <sys/types.h>
+#include <time.h>
 #include <unistd.h>
 #ifdef __APPLE__
 #include <mach-o/dyld.h>
 #endif
+#include <minizip/zip.h>
 #include "libsigrok.h"
 
 /* The spool and the output may exceed 2 GiB. */
@@ -38,6 +42,8 @@ G_STATIC_ASSERT(sizeof(off_t) >= 8);
 #define MAX_CHANNELS 64
 #define STOP_GRACE_US (5 * G_TIME_SPAN_SECOND)
 #define POLL_US 2000
+/* 64-bit words per channel in a .dsl data block: DSView's LogicSnapshot::LeafBlockSamples. */
+#define DSL_BLOCK_WORDS ((1 << 24) / 64)
 
 /*
  * Capture state. The library delivers data and events on its own threads,
@@ -194,7 +200,7 @@ struct options {
     const char *res, *out, *chans, *mode, *trig;
     uint64_t rate, samples;
     double vth, timeout;
-    int trigpos, list_only, stream, vth_given;
+    int trigpos, list_only, stream, vth_given, dsl;
     int enabled[MAX_CHANNELS], nch;
     int trig_ch;
     char trig_type;
@@ -220,6 +226,10 @@ static int parse_args(int argc, char **argv, struct options *o)
         const char *a = argv[i];
         if (!strcmp(a, "--list")) {
             o->list_only = 1;
+            continue;
+        }
+        if (!strcmp(a, "--dsl")) {
+            o->dsl = 1;
             continue;
         }
         static const char *const valued[] = {
@@ -405,6 +415,21 @@ static void config_error(const char *setting, int code)
            setting, code);
 }
 
+/* Publish a complete temporary file under path, or drop it when failed. */
+static int publish(char *tmp, const char *path, int failed)
+{
+    /* link() publishes atomically and, unlike rename(), refuses to replace an existing capture. */
+#ifdef _WIN32
+    /* No link() on Windows, but there rename() refuses to replace too. */
+    if (!failed && rename(tmp, path)) failed = 1;
+#else
+    if (!failed && link(tmp, path)) failed = 1;
+#endif
+    unlink(tmp);  /* after link() the published name keeps the data; drop the temporary one either way */
+    g_free(tmp);
+    return failed ? -1 : 0;
+}
+
 /* Keep the channel-major file layout, using fixed-size conversion buffers. */
 static int write_output(const char *path, int nch, uint64_t per_ch, uint64_t got)
 {
@@ -440,16 +465,97 @@ static int write_output(const char *path, int nch, uint64_t per_ch, uint64_t got
         k += count;
     }
     if (fclose(f)) failed = 1;
-    /* link() publishes atomically and, unlike rename(), refuses to replace an existing capture. */
-#ifdef _WIN32
-    /* No link() on Windows, but there rename() refuses to replace too. */
-    if (!failed && rename(tmp, path)) failed = 1;
-#else
-    if (!failed && link(tmp, path)) failed = 1;
-#endif
-    unlink(tmp);  /* after link() the published name keeps the data; drop the temporary one either way */
-    g_free(tmp);
+    return publish(tmp, path, failed);
+}
+
+/* Add one file to the .dsl archive. */
+static int dsl_add(zipFile z, const char *name, const zip_fileinfo *zi, const void *data,
+                   unsigned len, int zip64)
+{
+    /* Compressed as DSView saves sessions. */
+    if (zipOpenNewFileInZip64(z, name, zi, NULL, 0, NULL, 0, NULL, Z_DEFLATED, Z_BEST_SPEED,
+                              zip64) != ZIP_OK)
+        return -1;
+    int failed = zipWriteInFileInZip(z, data, len) != ZIP_OK;
+    if (zipCloseFileInZip(z) != ZIP_OK) failed = 1;
     return failed ? -1 : 0;
+}
+
+/*
+ * Write the capture as a DSView session file: a zip with a "header" and,
+ * for each channel and block of DSL_BLOCK_WORDS words, an "L-<channel>/<block>"
+ * file of the channel's samples packed LSB-first, as DSView itself saves them.
+ */
+static int write_dsl(const char *path, const int *channels, int nch, uint64_t per_ch,
+                     uint64_t got, uint64_t rate, long long trig_pos, gint64 start_us)
+{
+    if (nch <= 0) return -1;
+    if (fflush(g_raw) || fseeko(g_raw, 0, SEEK_SET)) return -1;
+    uint64_t blocks = per_ch ? (per_ch + DSL_BLOCK_WORDS - 1) / DSL_BLOCK_WORDS : 1;
+
+    GString *hdr = g_string_new("[version]\nversion = 3\n[header]\n");
+    /* The samplerate in plain Hz: the reader only takes integers before a unit. */
+    g_string_append_printf(hdr, "driver = DSLogic\ndevice mode = %d\ncapturefile = data\n"
+                           "total samples = %llu\ntotal probes = %d\ntotal blocks = %llu\n"
+                           "samplerate = %llu\ntrigger time = %lld\ntrigger pos = %lld\n",
+                           LOGIC, (unsigned long long)got, nch, (unsigned long long)blocks,
+                           (unsigned long long)rate, (long long)(start_us / 1000),
+                           trig_pos > 0 ? trig_pos : 0);
+    for (int c = 0; c < nch; c++)
+        g_string_append_printf(hdr, "probe%d = %d\n", channels[c], channels[c]);
+
+    zip_fileinfo zi;
+    memset(&zi, 0, sizeof zi);
+    time_t now = (time_t)(start_us / G_USEC_PER_SEC);
+    struct tm *tm = localtime(&now);
+    if (tm) {
+        zi.tmz_date.tm_year = tm->tm_year + 1900;
+        zi.tmz_date.tm_mon = tm->tm_mon;
+        zi.tmz_date.tm_mday = tm->tm_mday;
+        zi.tmz_date.tm_hour = tm->tm_hour;
+        zi.tmz_date.tm_min = tm->tm_min;
+        zi.tmz_date.tm_sec = tm->tm_sec;
+    }
+    /* Zip64 records only when the archive can pass 4 GiB, as small ones stay plain. */
+    int zip64 = per_ch * 8 * (uint64_t)nch > 0xF0000000ULL;
+
+    /* Write to a temporary file and publish it only on success. */
+    char *tmp = g_strdup_printf("%s.XXXXXX", path);
+    int fd = g_mkstemp(tmp);
+    if (fd < 0) { g_string_free(hdr, TRUE); g_free(tmp); return -1; }
+    close(fd);
+    zipFile z = zipOpen64(tmp, APPEND_STATUS_CREATE);
+    int failed = !z || dsl_add(z, "header", &zi, hdr->str, (unsigned)hdr->len, zip64);
+    g_string_free(hdr, TRUE);
+
+    /* The spool holds 64-sample words rotating through the channels, in time
+     * order, so read it one block of all channels at a time. */
+    uint64_t *raw = NULL, *channel = NULL;
+    if (!failed) {
+        raw = g_try_malloc((gsize)DSL_BLOCK_WORDS * nch * 8);
+        channel = g_try_malloc((gsize)DSL_BLOCK_WORDS * 8);
+        failed = !raw || !channel;
+    }
+    for (uint64_t b = 0; b < blocks && !failed; b++) {
+        size_t count = (size_t)MIN((uint64_t)DSL_BLOCK_WORDS, per_ch - b * DSL_BLOCK_WORDS);
+        if (fread(raw, sizeof(uint64_t) * nch, count, g_raw) != count) {
+            failed = 1;
+            break;
+        }
+        for (int c = 0; c < nch && !failed; c++) {
+            for (size_t i = 0; i < count; i++) channel[i] = raw[i * nch + c];
+            /* Clear samples past the requested count in the last word. */
+            if (b + 1 == blocks && got % 64)
+                channel[count - 1] &= (1ULL << (got % 64)) - 1;
+            char name[32];
+            snprintf(name, sizeof name, "L-%d/%llu", channels[c], (unsigned long long)b);
+            failed = dsl_add(z, name, &zi, channel, (unsigned)(count * 8), zip64);
+        }
+    }
+    g_free(raw);
+    g_free(channel);
+    if (z && zipClose(z, NULL) != ZIP_OK) failed = 1;
+    return publish(tmp, path, failed);
 }
 
 /* Why a finished acquisition must not be published, or NULL if it may. */
@@ -586,7 +692,7 @@ struct report {
     long long trig_pos;
     int timed_out, err, pkt_error, overflow;
     double secs;
-    const char *bin;
+    const char *bin, *dsl;
 };
 
 /* One JSON object; error, when set, makes it a failure report without a file. */
@@ -613,6 +719,8 @@ static void print_report(const char *error, const struct report *r)
     printf(",\"trigger_pos\":%lld,\"timed_out\":%s,\"lib_error_event\":%d,\"elapsed_s\":%.3f,\"bin\":",
            r->trig_pos, r->timed_out ? "true" : "false", r->err, r->secs);
     if (r->bin) json_str(r->bin); else printf("null");
+    printf(",\"dsl\":");
+    if (r->dsl) json_str(r->dsl); else printf("null");
     printf(",\"limit_samples\":%llu,\"packet_error\":%s,\"overflow\":%s}\n",
            (unsigned long long)r->limit, r->pkt_error ? "true" : "false",
            r->overflow ? "true" : "false");
@@ -794,6 +902,7 @@ int main(int argc, char **argv)
 
     /* One monotonic clock for both the deadline and the reported time. */
     gint64 t0 = g_get_monotonic_time();
+    gint64 start_us = g_get_real_time();
     gint64 deadline = t0 + (gint64)(o.timeout * G_TIME_SPAN_SECOND);
     rc = ds_start_collect();
     if (rc != SR_OK) {
@@ -829,20 +938,22 @@ int main(int argc, char **argv)
         .vth = act_vth, .mode = o.mode, .trig = o.trig, .format = format,
         .trig_pos = trig_pos, .timed_out = timed_out, .err = err,
         .pkt_error = pkt_error, .overflow = overflow,
-        .secs = (t1 - t0) / (double)G_TIME_SPAN_SECOND, .bin = NULL,
+        .secs = (t1 - t0) / (double)G_TIME_SPAN_SECOND, .bin = NULL, .dsl = NULL,
     };
     const char *failure = io_error ? NULL : capture_failure(timed_out, task_end, err,
             pkt_error, overflow, got, o.samples);
-    char *path = g_strdup_printf("%s.bin", o.out);
+    char *path = g_strdup_printf("%s.%s", o.out, o.dsl ? "dsl" : "bin");
     int exit_code = 0;
-    if (io_error || (!failure && write_output(path, nch, per_ch, got))) {
+    if (io_error || (!failure && (o.dsl
+            ? write_dsl(path, enabled, nch, per_ch, got, act_rate, trig_pos, start_us)
+            : write_output(path, nch, per_ch, got)))) {
         printf("{\"error\":\"cannot write capture data\"}\n");
         exit_code = 1;
     } else if (failure) {
         print_report(failure, &r);
         exit_code = 3;
     } else {
-        r.bin = path;
+        if (o.dsl) r.dsl = path; else r.bin = path;
         print_report(NULL, &r);
     }
     g_free(path);
