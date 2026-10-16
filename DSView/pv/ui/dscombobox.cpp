@@ -24,6 +24,8 @@
 #include <QString>
 #include <QGuiApplication>
 #include <QScreen>
+#include <QAbstractItemView>
+#include <QScrollBar>
 #include "../config/appconfig.h"
 
 DsComboBox::DsComboBox(QWidget *parent) 
@@ -87,6 +89,16 @@ void DsComboBox::showPopup()
         : "background-color:" + AppConfig::Instance().GetStyleColor().name());
 
 #else
+    // Widen the list to its items: as wide as the combobox, they are elided
+    // next to its scroll bar, as with high DPI scaling
+    QAbstractItemView *list = view();
+    list->ensurePolished();
+    const QMargins frame = list->contentsMargins();
+    int width = list->sizeHintForColumn(0) + frame.left() + frame.right();
+    if (count() > maxVisibleItems())
+        width += list->verticalScrollBar()->sizeHint().width();
+    list->setMinimumWidth(width);
+
     QComboBox::showPopup();
 #endif
 
