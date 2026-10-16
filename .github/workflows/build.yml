@@ -246,6 +246,13 @@ jobs:
       - name: Install
         run: cmake --install build
 
+      # DSView does not write Python bytecode, so ship it for the decoders,
+      # which are all compiled at every start otherwise. Hash based, so that
+      # the bytecode stays valid whatever the file times after installation,
+      # and an edited decoder is still compiled from its source.
+      - name: Precompile decoders
+        run: python3 -m compileall -q --invalidation-mode checked-hash dsview-dist/decoders
+
       - name: Bundle runtime DLLs
         run: |
           # Qt loads platform/image/style plugins dynamically (not visible to
