@@ -13,22 +13,27 @@ not authorize driving the target device or changing its wiring.
 
 ## Locate the tools
 
-The local checkout is `E:\code\DSView`; the tools' sources are in
-`tools/dslcap` and `tools/dsldecode`, each documented in its header comment.
-Prefer the user's executable if they name one. The official DreamSourceLab
-DSView install does not include these tools.
+The tools' sources are in `tools/dslcap` and `tools/dsldecode` of the fork,
+each documented in its header comment. The official DreamSourceLab DSView
+does not include them. Look in this order:
 
-- Prefer a self-contained package: the newest `build-dist\DSView-*-ucrt64\`
-  in the checkout that contains `dslcap.exe` and `dsldecode.exe`, or the
-  Windows package built by the fork's CI. The tools find the firmware (`res\`),
-  the decoders (`decoders\`) and Python (`pylib\`) next to themselves.
-- Linux installs put both in `bin/`, with the firmware and decoders under
-  `share/`.
-- A build tree (`build.dir\`) also works, but on Windows needs
-  `C:\msys64\ucrt64\bin` on `PATH`, and dsldecode needs
-  `PYTHONHOME=C:\msys64\ucrt64`.
-- Explicit locations: `--res DIR` or `DSLCAP_RES` for the firmware,
-  `--decoders DIR` or `DSLDECODE_DECODERS` for the decoders.
+1. An executable or install the user names.
+2. `dslcap` and `dsldecode` on `PATH`.
+3. A package or install of the fork:
+   - On Windows (the CI package, or `cmake --install` output), they sit next
+     to `DSView.exe`. They find the firmware (`res`), the decoders
+     (`decoders`) and Python (`pylib`) there, so they need no setup.
+   - On Linux, both are in `bin/`, with the firmware and decoders under
+     `share/`.
+4. The build tree `build.dir/` of a checkout of the fork. On Windows, it
+   needs the MSYS2 UCRT64 `bin` directory on `PATH`. dsldecode also needs
+   `PYTHONHOME` set to the UCRT64 prefix (`<msys2>\ucrt64`).
+
+If none is found, ask the user where the tools are.
+
+To point the tools at the firmware or decoders explicitly, use `--res DIR`
+or `DSLCAP_RES` for the firmware, and `--decoders DIR` or
+`DSLDECODE_DECODERS` for the decoders.
 
 ## Before using the hardware
 
@@ -86,7 +91,7 @@ bus has D+ high, so a falling edge on D+ marks the first bus activity.
 
 ```sh
 dslcap --channels 0,1 --samplerate 100000000 --samples 50000000 \
-       --trigger 0:F --trigpos 5 --timeout 60 --dsl --out C:/tmp/caps/usb-enum-001
+       --trigger 0:F --trigpos 5 --timeout 60 --dsl --out caps/usb-enum-001
 ```
 
 To capture an event you cause, such as a plug, reset or command:
